@@ -1,0 +1,14 @@
+.ProjectsContainer {
+  background: $lightGray;
+  height: 100vh;
+  padding: 50px;
+}
+
+.empty-projects-card {
+  background: white;
+  font-style: italic;
+  font-weight: 300;
+  margin: 20px 0;
+  padding: 100px;
+  text-align: center;
+}
