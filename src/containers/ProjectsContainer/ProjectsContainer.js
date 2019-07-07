@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 class ProjectsContainer extends Component {
   displayProjects = () => {
@@ -23,6 +24,7 @@ class ProjectsContainer extends Component {
       <section className="ProjectsContainer">
         <h2>Your Projects</h2>
         {this.displayProjects()}
+        <ProjectCard />
       </section>
     );
   }

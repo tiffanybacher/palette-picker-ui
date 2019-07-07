@@ -14,5 +14,6 @@ exports[`ProjectsContainer should match snapshot 1`] = `
       You have not created any projects!
     </h3>
   </article>
+  <ProjectCard />
 </section>
 `;
