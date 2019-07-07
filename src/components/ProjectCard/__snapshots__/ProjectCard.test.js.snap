@@ -4,8 +4,15 @@ exports[`ProjectCard should match snapshot 1`] = `
 <article
   className="ProjectCard"
 >
-  <p>
-    Project Card
-  </p>
+  <h3>
+    Project Name
+  </h3>
+  <hr />
+  <h4
+    className="empty-project-header"
+  >
+    This project has no saved palettes!
+  </h4>
+  <PalettePreview />
 </article>
 `;

@@ -11,7 +11,7 @@ exports[`ProjectsContainer should match snapshot 1`] = `
     className="empty-projects-card"
   >
     <h3>
-      You have not created any projects!
+      There are no saved projects!
     </h3>
   </article>
   <ProjectCard />
