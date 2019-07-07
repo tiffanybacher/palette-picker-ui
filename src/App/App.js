@@ -1,4 +1,5 @@
 import React from 'react';
+import ProjectsContainer from '../ProjectsContainer/ProjectsContainer';
 
 function App() {
   return (
@@ -6,6 +7,7 @@ function App() {
       <header>
         <h1>Palette Picker</h1>
       </header>
+      <ProjectsContainer />
     </div>
   );
 }
