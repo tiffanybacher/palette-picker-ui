@@ -6,7 +6,7 @@ class ProjectsContainer extends Component {
 
     if (this.props.projects) {
       projects = projects.map(project => {
-        console.log(project.name);
+        return <p>{project.name}</p>
       });
     } else {
       projects = 
