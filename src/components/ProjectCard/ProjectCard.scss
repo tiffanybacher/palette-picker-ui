@@ -8,12 +8,18 @@
 
   hr {
     border: solid $lightGray 1px;
-    margin: 10px 0;
+    margin: 10px 0 0;
   }
 
   .empty-project-header {
     font-style: italic;
-    margin: 20px;
+    margin: 30px;
     text-align: center;
+  }
+
+  .previews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 }
