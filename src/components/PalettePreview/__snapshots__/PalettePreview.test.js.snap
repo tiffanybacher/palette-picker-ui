@@ -8,19 +8,48 @@ exports[`PalettePreview should match snapshot 1`] = `
     Palette Name
   </h4>
   <div
-    className="preview-1"
-  />
-  <div
-    className="preview-2"
-  />
-  <div
-    className="preview-3"
-  />
-  <div
-    className="preview-4"
-  />
-  <div
-    className="preview-5"
-  />
+    className="flex-container"
+  >
+    <div
+      className="preview"
+      style={
+        Object {
+          "background": "#FDC58D",
+        }
+      }
+    />
+    <div
+      className="preview"
+      style={
+        Object {
+          "background": "#FFFFAA",
+        }
+      }
+    />
+    <div
+      className="preview"
+      style={
+        Object {
+          "background": "#95E38A",
+        }
+      }
+    />
+    <div
+      className="preview"
+      style={
+        Object {
+          "background": "#779DF2",
+        }
+      }
+    />
+    <div
+      className="preview"
+      style={
+        Object {
+          "background": "#D2BEFD",
+        }
+      }
+    />
+  </div>
 </article>
 `;

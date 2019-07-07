@@ -3,20 +3,26 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 class ProjectsContainer extends Component {
   displayProjects = () => {
-    let projects;
+    let projectsDisplay;
+    const { projects } = this.props.projects;
 
-    if (this.props.projects) {
-      projects = projects.map(project => {
-        return <p>{project.name}</p>
+    if (projects) {
+      projectsDisplay = projects.map(project => {
+        return (
+          <ProjectCard 
+            project={project} 
+            key={project.id}
+          />
+        );
       });
     } else {
-      projects = 
+      projectsDisplay = 
         <article className="empty-projects-card">
           <h3>There are no saved projects!</h3>
         </article>
     }
 
-    return projects;
+    return projectsDisplay;
   }
 
   render() {

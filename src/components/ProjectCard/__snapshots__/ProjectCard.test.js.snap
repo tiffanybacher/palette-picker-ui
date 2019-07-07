@@ -13,6 +13,13 @@ exports[`ProjectCard should match snapshot 1`] = `
   >
     This project has no saved palettes!
   </h4>
-  <PalettePreview />
+  <div
+    className="previews-container"
+  >
+    <PalettePreview />
+    <PalettePreview />
+    <PalettePreview />
+    <PalettePreview />
+  </div>
 </article>
 `;
