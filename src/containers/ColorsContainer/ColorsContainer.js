@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 function ColorsContainer(props) {
-  
-  
-  return (
+  const colors = props.colors.map(color => (
+    <Color ...color setColors={props.setColors} />
+  ));
 
+  return (
+    {colors}
   );
 };
 
@@ -16,4 +19,4 @@ export const mapDispatchToProps = (dispatch) => ({
   setColor: (color) => dispatch(setColor(color)) 
 });
 
-export default ColorsContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(ColorsContainer);
