@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 function Header(props) {
   return (
@@ -10,4 +11,6 @@ function Header(props) {
 
 export const mapStateToProps = (state) => ({
   isLoggedIn: state.isLoggedIn
-})
+});
+
+export default connect(mapStateToProps)(Header);
