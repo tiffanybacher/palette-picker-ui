@@ -3,5 +3,16 @@
 exports[`ProjectsContainer should match snapshot 1`] = `
 <section
   className="ProjectsContainer"
-/>
+>
+  <h2>
+    Your Projects
+  </h2>
+  <article
+    className="empty-projects-card"
+  >
+    <h3>
+      You have not created any projects!
+    </h3>
+  </article>
+</section>
 `;

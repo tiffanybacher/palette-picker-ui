@@ -19,7 +19,7 @@ class ProjectsContainer extends Component {
   }
 
   render() {
-    return(
+    return (
       <section className="ProjectsContainer">
         <h2>Your Projects</h2>
         {this.displayProjects()}
