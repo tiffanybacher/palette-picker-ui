@@ -12,7 +12,7 @@ class ProjectsContainer extends Component {
     } else {
       projects = 
         <article className="empty-projects-card">
-          <h3>You have not created any projects!</h3>
+          <h3>There are no saved projects!</h3>
         </article>
     }
 

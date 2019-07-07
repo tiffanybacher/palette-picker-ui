@@ -1,0 +1,19 @@
+.ProjectCard {
+  background: white;
+  padding: 50px;
+
+  h3 {
+    text-transform: uppercase;
+  }
+
+  hr {
+    border: solid $lightGray 1px;
+    margin: 10px 0;
+  }
+
+  .empty-project-header {
+    font-style: italic;
+    margin: 20px;
+    text-align: center;
+  }
+}
