@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 
 function Header(props) {
   return (
+    <header>
     <h1>Palette Picker</h1>
-    {!props.isLoggedIn && <p>LOGIN</p>}
-    {props.isLoggedIn && <p>SIGN OUT</p>}
+      {!props.isLoggedIn && <p>LOGIN</p>}
+      {props.isLoggedIn && <p>SIGN OUT</p>}
+    </header>
   );
 };
 

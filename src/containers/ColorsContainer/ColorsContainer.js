@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setColors, toggleLocked } from '../../actions';
 import Color from '../../components/Color/Color.js';
+import PaletteForm from '../../containers/PaletteForm/PaletteForm.js';
 
 class ColorsContainer extends Component {
 
@@ -35,14 +36,15 @@ class ColorsContainer extends Component {
     return (
       <div>
         {colors}
-        <button onClick={this.generateColors}> Generate </button>
+        <PaletteForm generateColors={this.generateColors} />
       </div>
     );
   };
 };
 
 export const mapStateToProps = (state) => ({
-  colors: state.colors
+  colors: state.colors,
+  isLoggedIn: state.isLoggedIn
 });
 
 export const mapDispatchToProps = (dispatch) => ({
