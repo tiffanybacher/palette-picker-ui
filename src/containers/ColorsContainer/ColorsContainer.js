@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setColors, toggleLocked } from '../../actions';
 import Color from '../../components/Color/Color.js';
-import PaletteForm from '../../containers/PaletteForm/PaletteForm.js';
+import { Redirect } from 'react-router-dom';
 
 class ColorsContainer extends Component {
+  state = {
+    redirect: false
+  }
 
   componentDidMount() {
     this.generateColors();
@@ -28,17 +31,28 @@ class ColorsContainer extends Component {
     this.props.setColors(colors);
   };
 
+  redirect = () => {
+    this.setState({ redirect: true });
+  }
 
   render() {
     const colors = this.props.colors.map(color => (
       <Color {...color} toggleLocked={this.props.toggleLocked} />
     ));
+
+    if (this.state.redirect) {
+      return <Redirect to="/home/login" />
+    }
+
     return (
       <div>
         <div className="colors">
           {colors}
         </div>
-        <PaletteForm isLoggedIn={this.props.isLoggedIn} generateColors={this.generateColors} colors={this.props.colors}/>
+        <div className="button-container">
+          <button onClick={this.generateColors}>GENERATE</button>
+          <button onClick={this.redirect}>SAVE</button>
+        </div>
       </div>
     );
   };
