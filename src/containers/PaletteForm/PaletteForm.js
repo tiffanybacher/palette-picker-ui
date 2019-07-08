@@ -22,12 +22,12 @@ class PaletteForm extends Component {
     //   return <Redirect to="/Login"/>
     // }
     
-  // const projectsDropDown = this.props.projects.map(project => {
-  //   return <option value={project.name}/>
-  // })
-  // {this.props.isLoggedIn && <select> {projectsDropDown} </select>}
+    // const projectsDropDown = this.props.projects.map(project => {
+    //   return <option value={project.name}/>
+    // })
+    // {this.props.isLoggedIn && <select> {projectsDropDown} </select>}
 
-  // {this.props.isLoggedIn && <input placeholder="Palette Name" />}
+    // {this.props.isLoggedIn && <input placeholder="Palette Name" />}
 
     return (
       <div>
