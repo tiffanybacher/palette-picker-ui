@@ -4,17 +4,14 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard';
 class ProjectsContainer extends Component {
   displayProjects = () => {
     let projectsDisplay;
-    const { projects } = this.props.projects;
 
-    if (projects) {
-      projectsDisplay = projects.map(project => {
-        return (
-          <ProjectCard 
-            project={project} 
-            key={project.id}
-          />
-        );
-      });
+    if (this.props.projects) {
+      projectsDisplay = this.props.projects.map(project => 
+        <ProjectCard 
+          project={project} 
+          key={project.id}
+        />
+      );
     } else {
       projectsDisplay = 
         <article className="empty-projects-card">

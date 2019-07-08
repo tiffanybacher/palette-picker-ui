@@ -4,7 +4,7 @@ import ProjectsContainer from './ProjectsContainer';
 
 describe('ProjectsContainer', () => {
   let mockProjects;
-  let mockPalettes;
+  // let mockPalettes;
   let wrapper;
 
   beforeEach(()=> {
@@ -39,7 +39,7 @@ describe('ProjectsContainer', () => {
 
   it('should match snapshot if there are no saved projects', () => {
     wrapper = shallow(
-      <ProjectsContainer projects={{}} />
+      <ProjectsContainer projects={[]} />
     );
 
     expect(wrapper).toMatchSnapshot();

@@ -1,37 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProjectsContainer should display a message if there are no saved projects 1`] = `
+exports[`ProjectsContainer should match snapshot if there are no saved projects 1`] = `
 <section
   className="ProjectsContainer"
 >
   <h2>
     Your Projects
   </h2>
-  <article
-    className="empty-projects-card"
-  >
-    <h3>
-      There are no saved projects!
-    </h3>
-  </article>
   <ProjectCard />
 </section>
 `;
 
-exports[`ProjectsContainer should match snapshot 1`] = `
+exports[`ProjectsContainer should match snapshot if there are saved projects 1`] = `
 <section
   className="ProjectsContainer"
 >
   <h2>
     Your Projects
   </h2>
-  <article
-    className="empty-projects-card"
-  >
-    <h3>
-      There are no saved projects!
-    </h3>
-  </article>
+  <ProjectCard
+    key="1"
+    project={
+      Object {
+        "id": 1,
+        "name": "Project 1",
+      }
+    }
+  />
   <ProjectCard />
 </section>
 `;
