@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PalettePreview should match snapshot 1`] = `
+<article
+  className="PalettePreview"
+>
+  <h4>
+    Palette Name
+  </h4>
+  <div
+    className="flex-container"
+  >
+    <div
+      className="preview"
+      key="1562550214418"
+      style={
+        Object {
+          "background": "#FDC58D",
+        }
+      }
+    />
+    <div
+      className="preview"
+      key="1562550214418"
+      style={
+        Object {
+          "background": "#FFFFAA",
+        }
+      }
+    />
+    <div
+      className="preview"
+      key="1562550214418"
+      style={
+        Object {
+          "background": "#95E38A",
+        }
+      }
+    />
+    <div
+      className="preview"
+      key="1562550214418"
+      style={
+        Object {
+          "background": "#779DF2",
+        }
+      }
+    />
+    <div
+      className="preview"
+      key="1562550214418"
+      style={
+        Object {
+          "background": "#D2BEFD",
+        }
+      }
+    />
+  </div>
+</article>
+`;
