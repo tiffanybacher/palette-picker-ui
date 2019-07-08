@@ -14,7 +14,9 @@ describe('ProjectsContainer', () => {
       }
     ];
     wrapper = shallow(
-      <ProjectsContainer projects={mockProjects} />
+      <ProjectsContainer 
+        projects={mockProjects} 
+      />
     );
   });
 
