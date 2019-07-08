@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProjectCard should match snapshot 1`] = `
+exports[`ProjectCard should match snapshot if there are no palettes 1`] = `
 <article
   className="ProjectCard"
 >
@@ -8,11 +8,37 @@ exports[`ProjectCard should match snapshot 1`] = `
     Project Name
   </h3>
   <hr />
-  <h4
-    className="empty-project-header"
+  <div
+    className="previews-container"
   >
-    This project has no saved palettes!
-  </h4>
+    <PalettePreview />
+    <PalettePreview />
+    <PalettePreview />
+    <PalettePreview />
+  </div>
+</article>
+`;
+
+exports[`ProjectCard should match snapshot if there are palettes 1`] = `
+<article
+  className="ProjectCard"
+>
+  <h3>
+    Project Name
+  </h3>
+  <hr />
+  <PalettePreview
+    colors={
+      Array [
+        "#FDC58D",
+        "#FFFFAA",
+        "#95E38A",
+        "#779DF2",
+        "#D2BEFD",
+      ]
+    }
+    key="11"
+  />
   <div
     className="previews-container"
   >

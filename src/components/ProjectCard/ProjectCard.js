@@ -6,11 +6,17 @@ function ProjectCard(props) {
   const { palettes } = props;
 
   if (palettes) {
-    palettesDisplay = palettes.map(palette => {
-      return <PalettePreview colors={palette.colors_array} />
-    });
+    palettesDisplay = palettes.map(palette => 
+      <PalettePreview 
+        colors={palette.colors_array} 
+        key={palette.id} 
+      />
+    );
   } else {
-    palettesDisplay = <h4 className="empty-project-header">This project has no saved palettes!</h4>
+    palettesDisplay = 
+      <h4 className="empty-project-header">
+        This project has no saved palettes!
+      </h4>
   }
 
   return (
