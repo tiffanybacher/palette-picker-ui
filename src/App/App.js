@@ -5,10 +5,7 @@ import Header from '../containers/Header/Header.js';
 function App() {
   return (
     <div className="App">
-    <Header />
-      <header>
-        <h1>Palette Picker</h1>
-      </header>
+      <Header />
       <ColorsContainer />
     </div>
   );
