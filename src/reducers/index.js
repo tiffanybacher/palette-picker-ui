@@ -4,4 +4,5 @@ import colorsReducer from './colorsReducer';
 
 const rootReducer = combineReducers({
   isLoggedIn: isLoggedInReducer
+  colors: colorsReducer
 });

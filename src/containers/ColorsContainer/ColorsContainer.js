@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setColors, setColor } from '../../actions';
+import Color from '../../components/Color/Color.js';
 
 class ColorsContainer extends Component {
 
