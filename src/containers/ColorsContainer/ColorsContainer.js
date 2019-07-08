@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { setColors, setColor } from '../../actions';
 
 class ColorsContainer extends Component {
 
@@ -9,7 +10,7 @@ class ColorsContainer extends Component {
 
   randomColorGenerator = () => {
     let randomColor = "#000000".replace(/0/g, function() {
-      return (~~(Math.random() * 16)).toString(16);
+      return (Math.floor(Math.random() * 16)).toString(16);
     });
     return randomColor;
   }; 
@@ -18,10 +19,10 @@ class ColorsContainer extends Component {
     let colors = [];
     let color;
     for (let i = 0; i < 5; i++) {
-      color = { isLocked: false, hexCode: this.randomColorGenerator() };
-      colors.push(color)
+      color = { isLocked: false, hexCode: this.randomColorGenerator(), id: i };
+      colors.push(color);
     };
-    this.props.setColors();
+    this.props.setColors(colors);
   };
 
   colors = this.props.colors.map(color => (
