@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from "react-router-dom";
 
 class PaletteForm extends Component {
   constructor() {
@@ -8,13 +9,25 @@ class PaletteForm extends Component {
     };
   };
 
+  redirectOrSave = () => {
+    if (this.props.isLoggedIn) {
+      //post to palettes
+    } else {
+      this.setState({ redirect: !this.state.redirect });
+    };
+  };
+
   render() {
+    // if(this.state.redirect) {
+    //   return <Redirect to="/Login"/>
+    // }
+    
   // const projectsDropDown = this.props.projects.map(project => {
   //   return <option value={project.name}/>
   // })
   // {this.props.isLoggedIn && <select> {projectsDropDown} </select>}
 
-  // {this.props.isLoggedIn && <input placeholder="Palette Name" />
+  // {this.props.isLoggedIn && <input placeholder="Palette Name" />}
 
     return (
       <div>
@@ -22,7 +35,7 @@ class PaletteForm extends Component {
           <button onClick={this.props.generateColors}> GENERATE </button>
         </div>
         <div>
-          <button>SAVE</button>
+          <button onClick={this.redirectOrSave}>SAVE</button>
         </div>
       </div>
     );
