@@ -38,7 +38,7 @@ class ColorsContainer extends Component {
         <div className="colors">
           {colors}
         </div>
-        <PaletteForm isLoggedIn={this.props.isLoggedIn} generateColors={this.generateColors} />
+        <PaletteForm isLoggedIn={this.props.isLoggedIn} generateColors={this.generateColors} colors={this.props.colors}/>
       </div>
     );
   };
