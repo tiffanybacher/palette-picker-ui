@@ -3,7 +3,7 @@ export const setColors = (colors) => ({
   colors
 });
 
-export const setColor = (color) => ({
-  type: 'SET_COLOR',
-  color
+export const toggleLocked = (id) => ({
+  type: 'TOGGLE_LOCKED',
+  id
 });

@@ -1,11 +1,11 @@
-const colorsReducer = (state = [], action) => {
+const colorsReducer = (state = [{}, {}, {}, {}, {}], action) => {
   switch(action.type) {
     case 'SET_COLORS':
       return action.colors;
-    case 'SET_COLOR':
+    case 'TOGGLE_LOCKED':
       return [...state].map(color => {
-        if (color.id === action.color.id) {
-          return action.color;
+        if (color.id === action.id) {
+          color.isLocked = !color.isLocked;
         };
         return color;
       });

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setColors, setColor } from '../../actions';
+import { setColors, toggleLocked } from '../../actions';
 import Color from '../../components/Color/Color.js';
 
 class ColorsContainer extends Component {
@@ -17,23 +17,25 @@ class ColorsContainer extends Component {
   }; 
 
   generateColors = () => {
-    let colors = [];
-    let color;
-    for (let i = 0; i < 5; i++) {
-      color = { isLocked: false, hexCode: this.randomColorGenerator(), id: i };
-      colors.push(color);
-    };
+    const colors = this.props.colors.map((color, index) => {
+      if (color.isLocked) {
+        return color
+      } else {
+        return { isLocked: false, hexCode: this.randomColorGenerator(), id: index }
+      }
+    });
     this.props.setColors(colors);
   };
 
 
   render() {
     const colors = this.props.colors.map(color => (
-      <Color {...color} setColors={this.props.setColor} />
+      <Color {...color} toggleLocked={this.props.toggleLocked} />
     ));
     return (
       <div>
         {colors}
+        <button onClick={this.generateColors}> Generate </button>
       </div>
     );
   };
@@ -44,7 +46,7 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  setColor: (color) => dispatch(setColor(color)),
+  toggleLocked: (id) => dispatch(toggleLocked(id)),
   setColors: (colors) => dispatch(setColors(colors))
 });
 

@@ -5,8 +5,8 @@ function Color(props) {
     <section>
       <p> HI </p>
       <div style={{ background: props.hexCode }}></div>
-      {props.isLocked && <p onClick={props.setColor}> LOCKED </p>}
-      {!props.isLocked && <p onClick={props.setColor}> UNLOCKED </p>}
+      {props.isLocked && <p onClick={() => props.toggleLocked(props.id)}> LOCKED </p>}
+      {!props.isLocked && <p onClick={() => props.toggleLocked(props.id)}> UNLOCKED </p>}
       <p> {props.hexCode} </p>
     </section>
   );
