@@ -25,7 +25,7 @@ class PaletteForm extends Component {
 
       const response = await fetch('http://localhost:3001', init);
       const id = await response.json();
-      
+      // add id and palette to state
 
     } else {
       this.setState({ redirect: !this.state.redirect });

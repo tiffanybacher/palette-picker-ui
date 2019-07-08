@@ -1,10 +1,14 @@
 import { combineReducers } from 'redux';
-import isLoggedInReducer from './isLoggedInReducer';
+import userReducer from './userReducer';
 import colorsReducer from './colorsReducer';
+import palettesReducer from './palettesReducer';
+import projectsReducer from './projectsReducer';
 
 const rootReducer = combineReducers({
-  isLoggedIn: isLoggedInReducer,
-  colors: colorsReducer
+  user: userReducer,
+  colors: colorsReducer,
+  palettes: palettesReducer,
+  projects: projectsReducer
 });
 
 export default rootReducer;
