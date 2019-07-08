@@ -9,14 +9,13 @@ function PalettePreview(props) {
   '#D2BEFD'
   ];
   const colors = props.colors_array || defaultColors;
-  const colorPreviews = colors.map(color => {
-    return (
-      <div 
-        className="preview"
-        style={{ background: color}}>
-      </div>
-    );
-  });
+  const colorPreviews = colors.map(color => 
+    <div 
+      className="preview"
+      style={{ background: color}}
+      key={Date.now()}>
+    </div>
+  );
 
   return (
     <article className="PalettePreview">
