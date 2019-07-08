@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectsContainer from '../ProjectsContainer/ProjectsContainer';
+import CreateAccount from '../CreateAccount/CreateAccount'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <h1>Palette Picker</h1>
       </header>
       <ProjectsContainer />
+      <CreateAccount />
     </div>
   );
 }
