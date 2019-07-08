@@ -28,6 +28,10 @@ class ProjectsContainer extends Component {
         <h2>Your Projects</h2>
         {this.displayProjects()}
         <ProjectCard />
+        <button className="add-project-btn">
+          <i className="fas fa-plus"></i>
+          <p>Create New Project</p>
+        </button>
       </section>
     );
   }
