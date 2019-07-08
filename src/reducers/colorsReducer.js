@@ -10,6 +10,8 @@ const colorsReducer = (state = [], action) => {
         return color;
       });
     default:
-      return state
+      return state;
   };
 };
+
+export default colorsReducer;

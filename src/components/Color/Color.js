@@ -1,10 +1,15 @@
+import React from 'react';
+
 function Color(props) {
   return (
     <section>
-      <div style=`background-color:${props.hexcode};`></div>
+      <p> HI </p>
+      <div style={{ background: props.hexCode }}></div>
       {props.isLocked && <p onClick={props.setColor}> LOCKED </p>}
       {!props.isLocked && <p onClick={props.setColor}> UNLOCKED </p>}
-      <p> {props.hexcode} </p>
+      <p> {props.hexCode} </p>
     </section>
-  )
-}
+  );
+};
+
+export default Color;

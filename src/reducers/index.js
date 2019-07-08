@@ -3,6 +3,8 @@ import isLoggedInReducer from './isLoggedInReducer';
 import colorsReducer from './colorsReducer';
 
 const rootReducer = combineReducers({
-  isLoggedIn: isLoggedInReducer
+  isLoggedIn: isLoggedInReducer,
   colors: colorsReducer
 });
+
+export default rootReducer;

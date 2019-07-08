@@ -26,13 +26,17 @@ class ColorsContainer extends Component {
     this.props.setColors(colors);
   };
 
-  colors = this.props.colors.map(color => (
-    <Color ...color setColors={this.props.setColor} />
-  ));
 
-  render() {(
-    {this.colors}
-  )};
+  render() {
+    const colors = this.props.colors.map(color => (
+      <Color {...color} setColors={this.props.setColor} />
+    ));
+    return (
+      <div>
+        {colors}
+      </div>
+    );
+  };
 };
 
 export const mapStateToProps = (state) => ({

@@ -1,5 +1,5 @@
 import React from 'react';
-import ColorContainer from '../containers/ColorContainer/ColorContainer.js';
+import ColorsContainer from '../containers/ColorsContainer/ColorsContainer.js';
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <header>
         <h1>Palette Picker</h1>
       </header>
-      <ColorContainer />
+      <ColorsContainer />
     </div>
   );
 }
