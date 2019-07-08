@@ -19,10 +19,10 @@ class ColorsContainer extends Component {
   generateColors = () => {
     const colors = this.props.colors.map((color, index) => {
       if (color.isLocked) {
-        return color
+        return color;
       } else {
-        return { isLocked: false, hexCode: this.randomColorGenerator(), id: index }
-      }
+        return { isLocked: false, hexCode: this.randomColorGenerator(), id: index };
+      };
     });
     this.props.setColors(colors);
   };

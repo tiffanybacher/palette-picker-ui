@@ -3,7 +3,6 @@ import React from 'react';
 function Color(props) {
   return (
     <section>
-      <p> HI </p>
       <div style={{ background: props.hexCode }}></div>
       {props.isLocked && <p onClick={() => props.toggleLocked(props.id)}> LOCKED </p>}
       {!props.isLocked && <p onClick={() => props.toggleLocked(props.id)}> UNLOCKED </p>}
