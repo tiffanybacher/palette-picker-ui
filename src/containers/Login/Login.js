@@ -30,7 +30,7 @@ class Login extends Component {
 
   render() {
     return (
-      <form onSubmit={this.postUser}>
+      <form onSubmit={this.postUser} className="login-form">
         <h3>Login</h3>
         <label htmlFor="username">USERNAME:</label>
         <input onChange={this.handleChange} name="username" />
