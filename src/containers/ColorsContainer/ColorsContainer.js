@@ -51,7 +51,7 @@ class ColorsContainer extends Component {
         </div>
         <div className="button-container">
           <button onClick={this.generateColors}>GENERATE</button>
-          <button onClick={this.redirect}>SAVE</button>
+          {this.props.user.name && <button onClick={this.redirect}>SAVE</button>}
         </div>
       </div>
     );
@@ -60,7 +60,7 @@ class ColorsContainer extends Component {
 
 export const mapStateToProps = (state) => ({
   colors: state.colors,
-  isLoggedIn: state.isLoggedIn
+  user: state.user
 });
 
 export const mapDispatchToProps = (dispatch) => ({
