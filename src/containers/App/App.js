@@ -5,6 +5,7 @@ import ProjectsContainer from '../ProjectsContainer/ProjectsContainer';
 import CreateAccount from '../CreateAccount/CreateAccount';
 import { Route } from 'react-router-dom';
 import Login from '../Login/Login';
+import SavePalette from '../../components/SavePalette/SavePalette';
 
 function App() {
   return (
@@ -12,9 +13,7 @@ function App() {
       <Header />
       <Route path="/home" component={ColorsContainer} />
       <Route exact path="/home/login" component={Login} />
-      {
-        //<Route path="/home/save" component={} />
-      }
+      <Route path="/home/save" component={SavePalette} />
       <Route path="/projects" component={ProjectsContainer} />
       <Route path="/home/register" component={CreateAccount} />
       <Route path="/signout" />

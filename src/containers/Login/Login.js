@@ -27,7 +27,8 @@ class Login extends Component {
     };
     const response = await(fetch('/api/v1/users', request));
     // if response is not okay add to local state and display on form
-    // if successful dispatch user and redirect to home
+    // if successful save user to store and redirect to home
+    // fetch projects and palettes
   };
 
   render() {
