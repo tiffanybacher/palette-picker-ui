@@ -26,6 +26,8 @@ class Login extends Component {
       body: JSON.stringify(this.state)
     };
     const response = await(fetch('/api/v1/users', request));
+    // if response is not okay add to local state and display on form
+    // if successful dispatch user and redirect to home
   };
 
   render() {
