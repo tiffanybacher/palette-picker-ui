@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import { setUser } from '../../actions';
+import { Link } from 'react-router-dom'
 
 function Login() {
   <form>
@@ -9,6 +10,9 @@ function Login() {
     <input name="username" />
     <label for="password">PASSWORD:</label>
     <input name="password"/> 
+    <p>
+      Not a member? <Link to="/home/register">Create an account?</Link>
+    </p>
   </form>
 };
 
