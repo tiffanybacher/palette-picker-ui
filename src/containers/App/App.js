@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Header />
       <Route path="/home" component={ColorsContainer} />
-      <Route path="/home/login" component={Login} />
+      <Route exact path="/home/login" component={Login} />
       {
         //<Route path="/home/save" component={} />
       }
