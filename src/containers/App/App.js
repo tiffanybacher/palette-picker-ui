@@ -15,7 +15,7 @@ function App() {
       <Route exact path="/home/login" component={Login} />
       <Route path="/home/save" component={SavePalette} />
       <Route path="/projects" component={ProjectsContainer} />
-      <Route path="/home/register" component={CreateAccount} />
+      <Route path="/register" component={CreateAccount} />
       <Route path="/signout" />
     </div>
   );
