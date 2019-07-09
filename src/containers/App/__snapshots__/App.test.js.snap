@@ -4,12 +4,46 @@ exports[`App should match snapshot 1`] = `
 <div
   className="App"
 >
-  <header>
-    <h1>
-      Palette Picker
-    </h1>
-  </header>
-  <ProjectsContainer />
-  <CreateAccount />
+  <Connect(Header) />
+  <Route
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(ColorsContainer)",
+        "type": [Function],
+      }
+    }
+    path="/home"
+  />
+  <Route
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(Login)",
+        "type": [Function],
+      }
+    }
+    exact={true}
+    path="/home/login"
+  />
+  <Route
+    component={[Function]}
+    path="/home/save"
+  />
+  <Route
+    component={[Function]}
+    path="/projects"
+  />
+  <Route
+    component={[Function]}
+    path="/home/register"
+  />
+  <Route
+    path="/signout"
+  />
 </div>
 `;
