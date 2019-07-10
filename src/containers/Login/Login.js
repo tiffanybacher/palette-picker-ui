@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setUser } from '../../actions';
-import { Link } from 'react-router-dom';
+import { setUser, setProjects, setPalettes } from '../../actions';
+import { Redirect, Link } from 'react-router-dom';
 
 class Login extends Component {
   constructor() {
     super();
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      error: ''
     };
   };
 
@@ -16,42 +17,83 @@ class Login extends Component {
     this.setState({ [e.target.name]:e.target.value })
   };
 
-  postUser = async (e) => {
+  getUser = async (e) => {
     e.preventDefault();
-    const request = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      }, 
-      body: JSON.stringify(this.state)
+    const { username, password } = this.state;
+    try {
+      const response = await fetch(`http://localhost:3001/api/v1/users/${username}/${password}`);
+      if(!response.ok) {
+        throw Error('incorrect username/password');
+      }
+      const result = await response.json();
+      this.props.setUser(result);
+    } catch (error) {
+      this.setState({ error: error.message });
     };
-    const response = await(fetch('/api/v1/users', request));
-    // if response is not okay add to local state and display on form
-    // if successful save user to store and redirect to home
-    // fetch projects and palettes
+    await this.getProjects();
+  };
+
+  getProjects = async () => {
+    try {
+      const response = await fetch(`http://localhost:3001/api/v1/projects?user_id=${this.props.user.id}`);
+      if(!response.ok) {
+        throw Error('Failed to grab projects');
+      }
+      const projects = await response.json();
+      this.props.setProjects(projects);
+      this.getPalettes(projects);
+    } catch (error) {
+      console.log({ error: error.message });
+    };
+  };
+
+  getPalettes = (projects) => {
+    let palettes = [];
+    projects.forEach(async (project) => {
+      try {
+        const response = await fetch(`http://localhost:3001/api/v1/palettes?project_id=${project.id}`);
+        const result = await response.json();
+        palettes = [...palettes, ...result];
+        this.props.setPalettes(palettes);
+      } catch(error) {
+        console.log({ error: error.message });
+      };
+
+    });    
   };
 
   render() {
+    if(this.props.user.username) {
+      return <Redirect to='/home' />
+    }
     return (
-      <form onSubmit={this.postUser} className="login-form">
+      <form onSubmit={this.getUser} className="login-form">
         <h3>Login</h3>
         <label htmlFor="username">USERNAME:</label>
         <input onChange={this.handleChange} name="username" />
         <label htmlFor="password">PASSWORD:</label>
         <input onChange={this.handleChange} name="password"/> 
         <button type="submit"> Login </button>
+        {this.state.error && <p>{this.state.error}</p>}
         <p>
-          Not a member? <Link to="/home/register">Create an account?</Link>
+          Not a member? <Link to="/register">Create an account?</Link>
         </p>
       </form>
     );
   };
 };
 
+export const mapStateToProps = (state) => ({
+  user: state.user,
+  projects: state.projects
+});
+
 export const mapDispatchToProps = (dispatch) => ({
-  setUser: (user) => dispatch(setUser(user))
+  setUser: (user) => dispatch(setUser(user)),
+  setProjects: (projects) => dispatch(setProjects(projects)),
+  setPalettes: (palettes) => dispatch(setPalettes(palettes))
 });
 
 
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

@@ -26,6 +26,7 @@ class SavePalette extends Component {
         <label htmlFor="name"> PALETTE NAME:</label>
         <input name="name" onChange={this.handleChange}/>
         <p>Add to existing project</p>
+        {this.state.isNewProject && <input />}
         <p>Create new project</p>
         <button type="submit">SAVE</button>
       </form>

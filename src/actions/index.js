@@ -12,3 +12,13 @@ export const setUser = (user) => ({
   type: 'SET_USER',
   user
 });
+
+export const setProjects = (projects) => ({
+  type: 'SET_PROJECTS',
+  projects
+});
+
+export const setPalettes = (palettes) => ({
+  type: 'SET_PALETTES',
+  palettes
+});
