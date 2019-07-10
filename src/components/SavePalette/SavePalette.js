@@ -5,8 +5,9 @@ class SavePalette extends Component {
   constructor() {
     super();
     this.state = {
-      name: '',
-      isNewProject: true
+      paletteName: '',
+      isNewProject: true,
+      projectName: ''
     };
   };
 
@@ -20,7 +21,24 @@ class SavePalette extends Component {
 
   addToProject = (e) => {
     this.setState({ isNewProject: false })
-  }
+  };
+
+  createInit = (body) => ({
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body)
+  });
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    e.persist();
+    // const 
+    // if(this.state.isNewProject) {
+    //   fetch('http://localhost:3001/api/v1/')
+    // };
+  };
 
   render() {
     const options = this.props.projects.map(project => {
@@ -28,12 +46,16 @@ class SavePalette extends Component {
     });
 
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <label htmlFor="name"> PALETTE NAME:</label>
-        <input name="name" onChange={this.handleChange}/>
+        <input name="paletteName" onChange={this.handleChange}/>
         <p onClick={this.addToProject}>Add to existing project</p>
         <p onClick={this.createProject}>Create new project</p>
-        {this.state.isNewProject && <input placeholder="Project Name"/>}
+        {
+          this.state.isNewProject 
+          && 
+          <input name="projectName" placeholder="Project Name" onChange={this.handleChange}/>
+        }
         {!this.state.isNewProject && <select> {options} </select>}
         <button type="submit">SAVE</button>
       </form>
