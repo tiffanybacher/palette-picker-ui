@@ -53,7 +53,12 @@ class Login extends Component {
       try {
         const response = await fetch(`http://localhost:3001/api/v1/palettes?project_id=${project.id}`);
         const result = await response.json();
-        palettes = [...palettes, ...result];
+        const cleanPalettes = result.map((palette) => ({
+          id: palette.id,
+          name: palette.name,
+          colors_array: palette.colors_array.map(color => JSON.parse(color))
+        }));
+        palettes = [...palettes, ...cleanPalettes];
         this.props.setPalettes(palettes);
       } catch(error) {
         console.log({ error: error.message });
