@@ -1,7 +1,7 @@
 import { setUser } from '../actions';
 
 export const postUser = (user) => {
-  return async () => {
+  return async (dispatch) => {
     const url = process.env.REACT_APP_BACKEND_URL + '/api/v1/users';
     const init = {
         method: 'POST',
@@ -19,7 +19,8 @@ export const postUser = (user) => {
       }
 
       const userInfo = await response.json();
-      console.log(userInfo);
+
+      dispatch(setUser(userInfo));
     } catch (error) {
       console.log(error);
     }
