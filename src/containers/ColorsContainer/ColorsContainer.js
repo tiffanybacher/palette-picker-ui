@@ -10,7 +10,9 @@ class ColorsContainer extends Component {
   }
 
   componentDidMount() {
-    this.generateColors();
+    if(!this.props.colors[0].hexCode) {
+      this.generateColors();
+    }
   };
 
   randomColorGenerator = () => {
@@ -41,7 +43,7 @@ class ColorsContainer extends Component {
     ));
 
     if (this.state.redirect) {
-      return <Redirect to="/home/login" />
+      return <Redirect to="/home/save" />
     }
 
     return (
@@ -51,7 +53,7 @@ class ColorsContainer extends Component {
         </div>
         <div className="button-container">
           <button onClick={this.generateColors}>GENERATE</button>
-          {this.props.user.name && <button onClick={this.redirect}>SAVE</button>}
+          {this.props.user.username && <button onClick={this.redirect}>SAVE</button>}
         </div>
       </div>
     );
