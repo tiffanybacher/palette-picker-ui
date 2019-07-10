@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setColors, toggleLocked } from '../../actions';
 import Color from '../../components/Color/Color.js';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class ColorsContainer extends Component {
-  state = {
-    redirect: false
-  }
-
+  constructor() {
+    super();
+  };
   componentDidMount() {
     if(!this.props.colors[0].hexCode) {
       this.generateColors();
@@ -38,9 +37,9 @@ class ColorsContainer extends Component {
   }
 
   render() {
-    if (this.state.redirect) {
-      return <Redirect to="/home/save" />
-    };
+    // if (this.state.redirect) {
+    //   return <Redirect to="/home/save" />
+    // };
 
     const colors = this.props.colors.map(color => (
       <Color {...color} toggleLocked={this.props.toggleLocked} />
@@ -53,7 +52,7 @@ class ColorsContainer extends Component {
         </div>
         <div className="button-container">
           <button onClick={this.generateColors}>GENERATE</button>
-          {this.props.user.username && <button onClick={this.redirect}>SAVE</button>}
+          {this.props.user.username && <Link to='/home/save'> <button>SAVE</button> </Link>}
         </div>
       </div>
     );
