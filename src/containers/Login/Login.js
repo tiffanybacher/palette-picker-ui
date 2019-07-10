@@ -23,13 +23,12 @@ class Login extends Component {
     try {
       const response = await fetch(`http://localhost:3001/api/v1/users/${username}/${password}`);
       if(!response.ok) {
-        throw Error('incorrect username/password')
+        throw Error('incorrect username/password');
       }
       const result = await response.json();
-      console.log(result)
-      this.props.setUser(result)
+      this.props.setUser(result);
     } catch (error) {
-      this.setState({ error: error.message })
+      this.setState({ error: error.message });
     };
   };
 
