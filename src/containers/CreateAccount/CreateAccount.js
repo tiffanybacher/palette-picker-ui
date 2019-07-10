@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { postUser } from '../../thunks/postUser';
 
-class CreateAccount extends Component {
+export class CreateAccount extends Component {
   state = {
     username: '',
     password1: '',
@@ -24,33 +26,16 @@ class CreateAccount extends Component {
     if (password1 !== password2) {
       this.setState({
         error: 'Passwords do not match.'
-      }, () => console.log(this.state.error));
+      });
     } else {
-      // use thunk to post user to database and to add user to redux store
-      // redirect to ProjectsContainer
       const user = {
         username: this.state.username,
         password: this.state.password1
       };
 
-      const init = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(user)
-      };
+      this.props.postUser(user);
 
-      fetch('http://localhost:3001/api/v1/users', init)
-        .then(response => {
-          return response.json()
-        })
-        .then(result => {
-          console.log(result)
-        })
-        .catch(error => {
-          console.log(error)
-        });
+      // redirect to ProjectsContainer
     }
   }
 
@@ -92,4 +77,8 @@ class CreateAccount extends Component {
   }
 }
 
-export default CreateAccount;
+export const mapDispatchToProps = (dispatch) => ({
+  postUser: (user) => dispatch(postUser(user))
+});
+
+export default connect(undefined, mapDispatchToProps)(CreateAccount);
