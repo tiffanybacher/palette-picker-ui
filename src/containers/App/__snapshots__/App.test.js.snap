@@ -27,7 +27,6 @@ exports[`App should match snapshot 1`] = `
         "type": [Function],
       }
     }
-    exact={true}
     path="/home/login"
   />
   <Route
@@ -35,12 +34,28 @@ exports[`App should match snapshot 1`] = `
     path="/home/save"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(ProjectsContainer)",
+        "type": [Function],
+      }
+    }
     path="/projects"
   />
   <Route
-    component={[Function]}
-    path="/home/register"
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(CreateAccount)",
+        "type": [Function],
+      }
+    }
+    path="/register"
   />
   <Route
     path="/signout"
