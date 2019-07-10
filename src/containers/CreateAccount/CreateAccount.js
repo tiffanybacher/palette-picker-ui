@@ -28,7 +28,29 @@ class CreateAccount extends Component {
     } else {
       // use thunk to post user to database and to add user to redux store
       // redirect to ProjectsContainer
-      console.log('passwords match');
+      const user = {
+        username: this.state.username,
+        password: this.state.password1
+      };
+
+      const init = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user)
+      };
+
+      fetch('http://localhost:3001/api/v1/users', init)
+        .then(response => {
+          return response.json()
+        })
+        .then(result => {
+          console.log(result)
+        })
+        .catch(error => {
+          console.log(error)
+        });
     }
   }
 
