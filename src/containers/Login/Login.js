@@ -8,7 +8,8 @@ class Login extends Component {
     super();
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      error: ''
     };
   };
 
@@ -22,12 +23,13 @@ class Login extends Component {
     try {
       const response = await fetch(`http://localhost:3001/api/v1/users/${username}/${password}`);
       if(!response.ok) {
-        throw Error('error in fetching user')
+        throw Error('incorrect username/password')
       }
       const result = await response.json();
+      console.log(result)
       this.props.setUser(result)
     } catch (error) {
-       console.log(error);
+      this.setState({ error: error.message })
     };
   };
 
@@ -43,6 +45,7 @@ class Login extends Component {
         <label htmlFor="password">PASSWORD:</label>
         <input onChange={this.handleChange} name="password"/> 
         <button type="submit"> Login </button>
+        {this.state.error && <p>{this.state.error}</p>}
         <p>
           Not a member? <Link to="/register">Create an account?</Link>
         </p>
