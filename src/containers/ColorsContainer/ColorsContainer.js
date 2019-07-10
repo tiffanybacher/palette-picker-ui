@@ -8,10 +8,11 @@ class ColorsContainer extends Component {
   constructor() {
     super();
   };
+  
   componentDidMount() {
     if(!this.props.colors[0].hexCode) {
       this.generateColors();
-    }
+    };
   };
 
   randomColorGenerator = () => {
@@ -32,15 +33,7 @@ class ColorsContainer extends Component {
     this.props.setColors(colors);
   };
 
-  redirect = () => {
-    this.setState({ redirect: true });
-  }
-
   render() {
-    // if (this.state.redirect) {
-    //   return <Redirect to="/home/save" />
-    // };
-
     const colors = this.props.colors.map(color => (
       <Color {...color} toggleLocked={this.props.toggleLocked} />
     ));
