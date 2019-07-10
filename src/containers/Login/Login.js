@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setUser, setProjects } from '../../actions';
+import { setUser, setProjects, setPalettes } from '../../actions';
 import { Redirect, Link } from 'react-router-dom';
 
 class Login extends Component {
@@ -30,16 +30,36 @@ class Login extends Component {
     } catch (error) {
       this.setState({ error: error.message });
     };
+    await this.getProjects();
+  };
+
+  getProjects = async () => {
     try {
       const response = await fetch(`http://localhost:3001/api/v1/projects?user_id=${this.props.user.id}`);
       if(!response.ok) {
-        throw Error('Failed to grab projects')
+        throw Error('Failed to grab projects');
       }
-      const result = await response.json();
-      console.log(result)
+      const projects = await response.json();
+      this.props.setProjects(projects);
+      this.getPalettes(projects);
     } catch (error) {
-      console.log(error)
-    }
+      console.log({ error: error.message });
+    };
+  };
+
+  getPalettes = (projects) => {
+    let palettes = [];
+    projects.forEach(async (project) => {
+      try {
+        const response = await fetch(`http://localhost:3001/api/v1/palettes?project_id=${project.id}`);
+        const result = await response.json();
+        palettes = [...palettes, ...result];
+        this.props.setPalettes(palettes);
+      } catch(error) {
+        console.log({ error: error.message });
+      };
+
+    });    
   };
 
   render() {
@@ -64,12 +84,14 @@ class Login extends Component {
 };
 
 export const mapStateToProps = (state) => ({
-  user: state.user
+  user: state.user,
+  projects: state.projects
 });
 
 export const mapDispatchToProps = (dispatch) => ({
   setUser: (user) => dispatch(setUser(user)),
-  setProjects: (projects) => dispatch(setProjects(projects))
+  setProjects: (projects) => dispatch(setProjects(projects)),
+  setPalettes: (palettes) => dispatch(setPalettes(palettes))
 });
 
 

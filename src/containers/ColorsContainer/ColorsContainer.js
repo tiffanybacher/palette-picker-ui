@@ -38,13 +38,13 @@ class ColorsContainer extends Component {
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/home/save" />
+    };
+
     const colors = this.props.colors.map(color => (
       <Color {...color} toggleLocked={this.props.toggleLocked} />
     ));
-
-    if (this.state.redirect) {
-      return <Redirect to="/home/save" />
-    }
 
     return (
       <div>
