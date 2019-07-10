@@ -5,10 +5,6 @@ import Color from '../../components/Color/Color.js';
 import { Link } from 'react-router-dom';
 
 class ColorsContainer extends Component {
-  constructor() {
-    super();
-  };
-  
   componentDidMount() {
     if(!this.props.colors[0].hexCode) {
       this.generateColors();

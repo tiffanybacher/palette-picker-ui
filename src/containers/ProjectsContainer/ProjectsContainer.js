@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
-class ProjectsContainer extends Component {
+export class ProjectsContainer extends Component {
   displayProjects = () => {
     let projectsDisplay;
 
@@ -36,5 +36,9 @@ class ProjectsContainer extends Component {
     );
   }
 }
+
+export const mapStateToProps = () => ({
+
+});
 
 export default ProjectsContainer;
