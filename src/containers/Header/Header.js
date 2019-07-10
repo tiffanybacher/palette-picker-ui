@@ -10,14 +10,15 @@ function Header(props) {
       {
         props.user.username 
         && 
-        <NavLink to='/home/'>
+        <div className="user-nav">
           <p>Welcome, {props.user.username}!</p>
-          <p>SIGN OUT</p>
-        </NavLink>
-        &&
-        <NavLink to='/projects'>
-          <p>YOUR PROJECTS</p>
-        </NavLink>
+          <NavLink to='/home/'>
+            <p>SIGN OUT</p>
+          </NavLink>
+          <NavLink to='/projects'>
+            <p>YOUR PROJECTS</p>
+          </NavLink>
+        </div>
       }
     </header>
   );
