@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setUser } from '../../actions';
+import { setUser, setProjects } from '../../actions';
 import { Redirect, Link } from 'react-router-dom';
 
 class Login extends Component {
@@ -30,6 +30,16 @@ class Login extends Component {
     } catch (error) {
       this.setState({ error: error.message });
     };
+    try {
+      const response = await fetch(`http://localhost:3001/api/v1/projects?user_id=${this.props.user.id}`);
+      if(!response.ok) {
+        throw Error('Failed to grab projects')
+      }
+      const result = await response.json();
+      console.log(result)
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   render() {
@@ -58,7 +68,8 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  setUser: (user) => dispatch(setUser(user))
+  setUser: (user) => dispatch(setUser(user)),
+  setProjects: (projects) => dispatch(setProjects(projects))
 });
 
 
