@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 export class ProjectsContainer extends Component {
@@ -23,6 +24,10 @@ export class ProjectsContainer extends Component {
   }
 
   render() {
+    if (this.props) {
+      console.log(this.props)
+    }
+    
     return (
       <section className="ProjectsContainer">
         <h2>Your Projects</h2>
@@ -37,8 +42,10 @@ export class ProjectsContainer extends Component {
   }
 }
 
-export const mapStateToProps = () => ({
-
+export const mapStateToProps = (state) => ({
+  user: state.user,
+  projects: state.projects,
+  palettes: state.palettes
 });
 
-export default ProjectsContainer;
+export default connect(mapStateToProps)(ProjectsContainer);
