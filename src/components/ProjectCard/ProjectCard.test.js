@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ProjectCard from './ProjectCard';
+import { ProjectCard } from './ProjectCard';
 
 describe('ProjectCard', () => {
   let mockProject;

@@ -32,3 +32,8 @@ export const addPalette = (palette) => ({
   type: 'ADD_PALETTE',
   palette
 });
+
+export const deletePalette = (paletteId) => ({
+  type: 'DELETE_PALETTE',
+  paletteId
+});
