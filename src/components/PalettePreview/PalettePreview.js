@@ -17,7 +17,7 @@ function PalettePreview(props) {
         {colorPreviews}
         <i 
           onClick={() => props.handleDeletePalette(props.paletteId)}
-          class="fas fa-times">
+          className="fas fa-times">
         </i>
       </div>
     </article>

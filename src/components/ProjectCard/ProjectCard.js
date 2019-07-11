@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deletePalette } from '../../actions';
+import { deletePalette } from '../../thunks/deletePalette';
 import PalettePreview from '../PalettePreview/PalettePreview';
 
 export class ProjectCard extends Component {
