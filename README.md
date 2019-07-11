@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Palette Picker is a app to help people interested in design to find inspiration from randomly generated color palettes.
 
-In the project directory, you can run:
+## Setup
 
-### `npm start`
+Simply start by cloning the front-end repo:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+git clone https://github.com/tiffanybacher/palette-picker-ui.git
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+In the same folder you cloned the repository also clone the back-end repository with 
 
-### `npm test`
+```bash
+git clone https://github.com/tiffanybacher/palette-picker-api.git
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Once you have cloned the repo, to install the library dependencies cd into the folders just created and run:
 
-### `npm run build`
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once everything is installed in both folders, in the back-end folder, run `npm start` in your terminal, you should see "Something is running on http://localhost:3001/".  Now opening a separate tab in the terminal cd into the front-end repository and run `npm start` you're default browser should open a tab to http://localhost:3000/ if not simply go to http://localhost:3000/ in your preferred browser.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Screenshots
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img width="1440" alt="Screen Shot 2019-07-11 at 7 12 40 AM" src="https://user-images.githubusercontent.com/46074328/61076393-5c1ac600-a3d9-11e9-89f7-9993b6774a21.png">
+<img width="1440" alt="Screen Shot 2019-07-11 at 7 13 54 AM" src="https://user-images.githubusercontent.com/46074328/61076394-5c1ac600-a3d9-11e9-8b49-352ae5389839.png">
+<img width="1440" alt="Screen Shot 2019-07-11 at 7 17 02 AM" src="https://user-images.githubusercontent.com/46074328/61076395-5c1ac600-a3d9-11e9-86c3-dd98b03f3ae1.png">
+<img width="1440" alt="Screen Shot 2019-07-11 at 7 12 13 AM" src="https://user-images.githubusercontent.com/46074328/61076441-7ce31b80-a3d9-11e9-9df0-f044853fe96f.png">
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Emphasis of the Project
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Further knowledge on the following technologies/principles:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Node.js
+- Express
+- Knex
+- PostgreSQL
+- React
+- Router
+- Redux
+- Thunks
+- Jest and Enzyme Testing
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributors/Project Length
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Created by:
+- Brennan Duffey: [GitHub](https://github.com/BrennanDuffey),
+                [Email](mailto:BrennanDuffey@gmail.com),
+                [LinkedIn](https://www.linkedin.com/in/brennan-duffey-8a387182/)
+                
+- Tiffany Bacher: [GitHub](https://github.com/tiffanybacher),
+                [Email](mailto:tiffanybacher@gmail.com),
+                [LinkedIn](https://www.linkedin.com/in/tiffanybacher)
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Improvements
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- https://github.com/tiffanybacher/palette-picker-ui/issues
