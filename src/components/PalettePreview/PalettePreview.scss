@@ -12,16 +12,10 @@
 
   margin: 0 10px;
 
-  .fa-times {
-    color: rgba(black, .5);
-    font-size: 1.25em;
+  .fas-times {
     position: relative;
     right: 7px;
     bottom: 7px;
-
-    &:hover {
-      color: black;
-    }
   }
 }
 

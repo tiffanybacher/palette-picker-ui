@@ -28,6 +28,11 @@ export const addProject = (project) => ({
   project
 });
 
+export const deleteProject = (projectId) => ({
+  type: 'DELETE_PROJECT',
+  projectId
+});
+
 export const addPalette = (palette) => ({
   type: 'ADD_PALETTE',
   palette
