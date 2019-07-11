@@ -14,7 +14,7 @@ export const deleteProject = (projectId) => {
         throw new Error('Failed to delete project')
       }
 
-      dispatch(actions.deleteProject(projectId));
+      // dispatch(actions.deleteProject(projectId));
     } catch (error) {
       console.log({ error });
     }

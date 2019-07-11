@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deletePalette } from '../../thunks/deletePalette';
+import { deleteProject } from '../../thunks/deleteProject';
 import PalettePreview from '../PalettePreview/PalettePreview';
 
 export class ProjectCard extends Component {
-  handleDeletePalette = (paletteId) => {
-    this.props.deletePalette(paletteId)
-  }
-
   render() {
     let palettesDisplay;
     const { palettes } = this.props;
@@ -15,7 +12,7 @@ export class ProjectCard extends Component {
     if (palettes.length) {
       palettesDisplay = palettes.map(palette => 
         <PalettePreview 
-          handleDeletePalette={this.handleDeletePalette}
+          deletePalette={this.props.deletePalette}
           colors={palette.colors_array} 
           paletteId={palette.id}
           key={palette.id} 
@@ -33,6 +30,10 @@ export class ProjectCard extends Component {
         <h3>
           {this.props.project.name}
         </h3>
+        <i 
+          onClick={() => this.props.deleteProject(this.props.project.id)}
+          className="fas fa-times">
+        </i>
         <hr />
         <div className="previews-container">
          {palettesDisplay}
@@ -43,7 +44,8 @@ export class ProjectCard extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  deletePalette: (paletteId) => dispatch(deletePalette(paletteId))
+  deletePalette: (paletteId) => dispatch(deletePalette(paletteId)),
+  deleteProject: (projectId) => dispatch(deleteProject(projectId))
 })
 
 export default connect(undefined, mapDispatchToProps)(ProjectCard);
