@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { addProject, addPalette } from '../../actions';
 
 
@@ -9,7 +10,8 @@ export class SavePalette extends Component {
     this.state = {
       paletteName: '',
       isNewProject: true,
-      selectedProjectId: 0
+      selectedProjectId: 0,
+      redirect: false
     };
   };
 
@@ -70,8 +72,11 @@ export class SavePalette extends Component {
     if(this.state.isNewProject) {
       const project_id = await this.postProject(e);
       this.postPalette(project_id);
+      this.setState({ redirect: true });
+
     } else {
       this.postPalette(this.state.selectedProjectId);
+      this.setState({ redirect: true });
     };
   };
 
@@ -81,6 +86,10 @@ export class SavePalette extends Component {
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/projects" />
+    }
+
     const options = this.props.projects.map(project => {
       return <option value={project.id}>{project.name}</option>
     });

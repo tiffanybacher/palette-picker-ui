@@ -5,13 +5,13 @@ import { NavLink } from 'react-router-dom';
 export function Header(props) {
   return (
     <header className="header">
-      <NavLink to='/home' className="main-header">
+      <NavLink to='/newpalette' className="main-header">
         <h1>Palette Picker</h1>
       </NavLink>
       {
         !props.user.username 
         && 
-        <NavLink to='/home/login'>
+        <NavLink to='/login'>
           <p className="login-navlink">LOGIN</p>
         </NavLink>
       }
@@ -22,7 +22,7 @@ export function Header(props) {
           <NavLink to='/projects'>
             <p>YOUR PROJECTS</p>
           </NavLink>
-          <NavLink to='/home'>
+          <NavLink to='/newpalette'>
             <p>NEW PALETTE</p>
           </NavLink>
           <a>

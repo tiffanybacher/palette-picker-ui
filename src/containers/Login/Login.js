@@ -70,7 +70,7 @@ export class Login extends Component {
 
   render() {
     if (this.props.user.username) {
-      return <Redirect to='/home' />
+      return <Redirect to='/' />
     }
     
     return (
