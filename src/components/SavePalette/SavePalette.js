@@ -17,12 +17,12 @@ class SavePalette extends Component {
     this.setState({ [e.target.name]:e.target.value });
   };
 
-  createProject = (e) => {
+  createProject = () => {
     this.setState({ isNewProject: true });
   };
 
-  addToProject = (e) => {
-    this.setState({ isNewProject: false })
+  addToProject = () => {
+    this.setState({ isNewProject: false });
   };
 
   createInit = (body) => ({
@@ -71,7 +71,7 @@ class SavePalette extends Component {
       const project_id = await this.postProject(e);
       this.postPalette(project_id);
     } else {
-      this.postPalette(this.state.selectedProjectId)
+      this.postPalette(this.state.selectedProjectId);
     };
   };
 
