@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorsContainer should match snapshot 1`] = `
+<div>
+  <div
+    className="colors"
+  >
+    <Color
+      hexCode="#cc36de"
+      id={0}
+      isLocked={false}
+      key="#cc36de"
+    />
+    <Color
+      hexCode="#e3caa7"
+      id={1}
+      isLocked={false}
+      key="#e3caa7"
+    />
+    <Color
+      hexCode="#8da892"
+      id={2}
+      isLocked={false}
+      key="#8da892"
+    />
+    <Color
+      hexCode="#3d9168"
+      id={3}
+      isLocked={false}
+      key="#3d9168"
+    />
+    <Color
+      hexCode="#57798e"
+      id={4}
+      isLocked={false}
+      key="#57798e"
+    />
+  </div>
+  <div
+    className="button-container"
+  >
+    <button
+      onClick={[Function]}
+    >
+      GENERATE
+    </button>
+  </div>
+</div>
+`;
+
+exports[`ColorsContainer should match snapshot on conditional rendering 1`] = `
+<div>
+  <div
+    className="colors"
+  >
+    <Color
+      hexCode="#cc36de"
+      id={0}
+      isLocked={false}
+      key="#cc36de"
+    />
+    <Color
+      hexCode="#e3caa7"
+      id={1}
+      isLocked={false}
+      key="#e3caa7"
+    />
+    <Color
+      hexCode="#8da892"
+      id={2}
+      isLocked={false}
+      key="#8da892"
+    />
+    <Color
+      hexCode="#3d9168"
+      id={3}
+      isLocked={false}
+      key="#3d9168"
+    />
+    <Color
+      hexCode="#57798e"
+      id={4}
+      isLocked={false}
+      key="#57798e"
+    />
+  </div>
+  <div
+    className="button-container"
+  >
+    <button
+      onClick={[Function]}
+    >
+      GENERATE
+    </button>
+    <Link
+      to="/home/save"
+    >
+       
+      <button>
+        SAVE
+      </button>
+       
+    </Link>
+  </div>
+</div>
+`;

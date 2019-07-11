@@ -15,6 +15,13 @@ describe('Color', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should match conditional rendering', () => {
+    wrapper = shallow(
+      <Color isLocked={true} />
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it.skip('should call toggleLocked on click', () => {
     wrapper.find('#locked').simulate('click');
     expect(wrapper.instance().toggleLocked).toHaveBeenCalled();

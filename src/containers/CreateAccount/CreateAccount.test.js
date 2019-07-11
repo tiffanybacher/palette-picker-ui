@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CreateAccount from './CreateAccount';
+import { CreateAccount } from './CreateAccount';
 
 describe('CreateAccount', () => {
   let wrapper;

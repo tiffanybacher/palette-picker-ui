@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-function Header(props) {
+export function Header(props) {
   return (
     <header className="header">
       <h1>Palette Picker</h1>

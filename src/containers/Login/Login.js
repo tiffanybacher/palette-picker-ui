@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { setUser, setProjects, setPalettes } from '../../actions';
 import { Redirect, Link } from 'react-router-dom';
 
-class Login extends Component {
+export class Login extends Component {
   constructor() {
     super();
     this.state = {
@@ -53,7 +53,6 @@ class Login extends Component {
       try {
         const response = await fetch(`http://localhost:3001/api/v1/palettes?project_id=${project.id}`);
         const result = await response.json();
-        console.log(result);
         const cleanPalettes = result.map((palette) => ({
           project_id: palette.project_id,
           id: palette.id,
