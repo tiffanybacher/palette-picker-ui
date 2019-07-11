@@ -77,7 +77,7 @@ class SavePalette extends Component {
 
   selectChange = (e) => {
     e.persist();
-    this.setState({ selectedProjectId: e.target.value });
+    this.setState({ selectedProjectId: parseInt(e.target.value) });
   }
 
   render() {

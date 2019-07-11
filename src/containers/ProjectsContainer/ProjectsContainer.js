@@ -9,7 +9,7 @@ export class ProjectsContainer extends Component {
     if (this.props.projects.length) {
       projectsDisplay = this.props.projects.map(project => {
         const palettes = this.props.palettes.filter(palette => {
-          return palette.project_id == project.id;
+          return palette.project_id === project.id;
         });
 
         return (
