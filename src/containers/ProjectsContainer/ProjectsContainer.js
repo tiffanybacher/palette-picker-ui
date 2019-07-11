@@ -3,12 +3,19 @@ import { connect } from 'react-redux';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 export class ProjectsContainer extends Component {
+  findPalettes = (projectId) => {
+    return this.props.palettes.filter(palette =>
+      palette.project_id === projectId
+    );
+  }
+
   displayProjects = () => {
     let projectsDisplay;
 
-    if (this.props.projects) {
+    if (this.props.projects.length) {
       projectsDisplay = this.props.projects.map(project => 
         <ProjectCard 
+          palettes={this.findPalettes()}
           project={project} 
           key={project.id}
         />
@@ -24,19 +31,16 @@ export class ProjectsContainer extends Component {
   }
 
   render() {
-    if (this.props) {
-      console.log(this.props)
-    }
-    
     return (
       <section className="ProjectsContainer">
         <h2>Your Projects</h2>
         {this.displayProjects()}
-        <ProjectCard />
-        <button className="add-project-btn">
-          <i className="fas fa-plus"></i>
-          <p>Create New Project</p>
-        </button>
+        {
+        // <button className="add-project-btn">
+        //  <i className="fas fa-plus"></i>
+        //    <p>Create New Project</p>
+        // </button>
+        }
       </section>
     );
   }

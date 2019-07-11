@@ -5,7 +5,9 @@ function ProjectCard(props) {
   let palettesDisplay;
   const { palettes } = props;
 
-  if (palettes) {
+  console.log(palettes)
+
+  if (palettes.length) {
     palettesDisplay = palettes.map(palette => 
       <PalettePreview 
         colors={palette.colors_array} 
@@ -22,15 +24,11 @@ function ProjectCard(props) {
   return (
     <article className="ProjectCard">
       <h3>
-        Project Name
+        {props.project.name}
       </h3>
       <hr />
-      {palettesDisplay}
       <div className="previews-container">
-        <PalettePreview />
-        <PalettePreview />
-        <PalettePreview />
-        <PalettePreview />
+       {palettesDisplay}
       </div>
     </article>
   );
