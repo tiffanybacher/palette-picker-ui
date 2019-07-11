@@ -6,13 +6,25 @@ function Header(props) {
   return (
     <header className="header">
       <h1>Palette Picker</h1>
-      {!props.user.username && <NavLink to='/home/login'>LOGIN</NavLink>}
+      {
+        !props.user.username 
+        && 
+        <NavLink to='/home/login'>
+          <p>LOGIN</p>
+        </NavLink>
+      }
       {
         props.user.username 
         && 
-        <NavLink to='/home/'>
-          <span>{props.user.username}</span> SIGN OUT
-        </NavLink>
+        <div className="user-nav">
+          <p>Welcome, {props.user.username}!</p>
+          <NavLink to='/home/'>
+            <p>SIGN OUT</p>
+          </NavLink>
+          <NavLink to='/projects'>
+            <p>YOUR PROJECTS</p>
+          </NavLink>
+        </div>
       }
     </header>
   );

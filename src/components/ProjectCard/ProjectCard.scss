@@ -22,4 +22,16 @@
     flex-wrap: wrap;
     justify-content: space-around;
   }
+
+  .fa-times {
+    color: rgba(black, .5);
+    font-size: 1.25em;
+    position: relative;
+    right: 7px;
+    bottom: 7px;
+
+    &:hover {
+      color: black;
+    }
+  }
 }

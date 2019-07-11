@@ -53,7 +53,6 @@ class Login extends Component {
       try {
         const response = await fetch(`http://localhost:3001/api/v1/palettes?project_id=${project.id}`);
         const result = await response.json();
-        console.log(result);
         const cleanPalettes = result.map((palette) => ({
           project_id: palette.project_id,
           id: palette.id,
@@ -77,9 +76,9 @@ class Login extends Component {
       <form onSubmit={this.getUser} className="login-form">
         <h3>Login</h3>
         <label htmlFor="username">USERNAME:</label>
-        <input onChange={this.handleChange} name="username" />
+        <input type="text" onChange={this.handleChange} name="username" />
         <label htmlFor="password">PASSWORD:</label>
-        <input onChange={this.handleChange} name="password"/> 
+        <input type="password" onChange={this.handleChange} name="password"/> 
         <button type="submit"> Login </button>
         {this.state.error && <p>{this.state.error}</p>}
         <p>

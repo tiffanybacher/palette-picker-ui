@@ -1,39 +1,51 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { deletePalette } from '../../thunks/deletePalette';
+import { deleteProject } from '../../thunks/deleteProject';
 import PalettePreview from '../PalettePreview/PalettePreview';
 
-function ProjectCard(props) {
-  let palettesDisplay;
-  const { palettes } = props;
+export class ProjectCard extends Component {
+  render() {
+    let palettesDisplay;
+    const { palettes } = this.props;
 
-  if (palettes) {
-    palettesDisplay = palettes.map(palette => 
-      <PalettePreview 
-        colors={palette.colors_array} 
-        key={palette.id} 
-      />
+    if (palettes.length) {
+      palettesDisplay = palettes.map(palette => 
+        <PalettePreview 
+          deletePalette={this.props.deletePalette}
+          colors={palette.colors_array} 
+          paletteId={palette.id}
+          key={palette.id} 
+        />
+      );
+    } else {
+      palettesDisplay = 
+        <h4 className="empty-project-header">
+          This project has no saved palettes!
+        </h4>
+    }
+
+    return (
+      <article className="ProjectCard">
+        <h3>
+          {this.props.project.name}
+        </h3>
+        <i 
+          onClick={() => this.props.deleteProject(this.props.project.id)}
+          className="fas fa-times">
+        </i>
+        <hr />
+        <div className="previews-container">
+         {palettesDisplay}
+        </div>
+      </article>
     );
-  } else {
-    palettesDisplay = 
-      <h4 className="empty-project-header">
-        This project has no saved palettes!
-      </h4>
   }
-
-  return (
-    <article className="ProjectCard">
-      <h3>
-        Project Name
-      </h3>
-      <hr />
-      {palettesDisplay}
-      <div className="previews-container">
-        <PalettePreview />
-        <PalettePreview />
-        <PalettePreview />
-        <PalettePreview />
-      </div>
-    </article>
-  );
 }
 
-export default ProjectCard;
+export const mapDispatchToProps = (dispatch) => ({
+  deletePalette: (paletteId) => dispatch(deletePalette(paletteId)),
+  deleteProject: (projectId) => dispatch(deleteProject(projectId))
+})
+
+export default connect(undefined, mapDispatchToProps)(ProjectCard);
