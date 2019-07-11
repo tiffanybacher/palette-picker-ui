@@ -21,7 +21,7 @@ export class Login extends Component {
     e.preventDefault();
     const { username, password } = this.state;
     try {
-      const response = await fetch(`http://localhost:3001/api/v1/users/${username}/${password}`);
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/users/${username}/${password}`);
       if(!response.ok) {
         throw Error('incorrect username/password');
       }
@@ -35,7 +35,7 @@ export class Login extends Component {
 
   getProjects = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/api/v1/projects?user_id=${this.props.user.id}`);
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/projects?user_id=${this.props.user.id}`);
       if(!response.ok) {
         throw Error('Failed to grab projects');
       }
@@ -51,7 +51,7 @@ export class Login extends Component {
     let palettes = [];
     projects.forEach(async (project) => {
       try {
-        const response = await fetch(`http://localhost:3001/api/v1/palettes?project_id=${project.id}`);
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/palettes?project_id=${project.id}`);
         const result = await response.json();
         const cleanPalettes = result.map((palette) => ({
           project_id: palette.project_id,

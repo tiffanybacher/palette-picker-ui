@@ -36,7 +36,7 @@ export class SavePalette extends Component {
   postProject = async (e) => {
     try {
       const init = this.createInit({ user_id: this.props.user.id, name: e.target[1].value });
-      const response = await fetch('http://localhost:3001/api/v1/projects', init);
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/projects`, init);
       const result = await response.json();
       const id = result.id;
       const projectToAdd = { id, user_id: this.props.user.id, name: e.target[1].value };
@@ -54,7 +54,7 @@ export class SavePalette extends Component {
         name: this.state.paletteName, 
         colors_array:this.props.colors 
       });
-      const response = await fetch('http://localhost:3001/api/v1/palettes', init);
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/palettes`, init);
       const result = await response.json();
       const id = result.id
       const paletteToAdd = { project_id: project_id, id, name: this.state.paletteName, colors_array: this.props.colors };
