@@ -2,7 +2,7 @@
 
 exports[`Color should match conditional rendering 1`] = `
 <section
-  className="palette"
+  className="Color-block"
 >
   <div
     className="color"
@@ -13,21 +13,21 @@ exports[`Color should match conditional rendering 1`] = `
     }
   />
   <p
-    id="locked"
     onClick={[Function]}
   >
-     LOCKED 
+    <i
+      class="fas fa-lock"
+    />
   </p>
-  <p>
-     
-     
-  </p>
+  <p
+    className="hex-code"
+  />
 </section>
 `;
 
 exports[`Color should match snapshot 1`] = `
 <section
-  className="palette"
+  className="Color-block"
 >
   <div
     className="color"
@@ -40,11 +40,12 @@ exports[`Color should match snapshot 1`] = `
   <p
     onClick={[Function]}
   >
-     UNLOCKED 
+    <i
+      class="fas fa-unlock"
+    />
   </p>
-  <p>
-     
-     
-  </p>
+  <p
+    className="hex-code"
+  />
 </section>
 `;

@@ -4,17 +4,37 @@ exports[`Header should match snapshot 1`] = `
 <header
   className="header"
 >
-  <h1>
-    Palette Picker
-  </h1>
   <NavLink
-    to="/home/"
+    className="main-header"
+    to="/newpalette"
   >
-    <span>
-      something
-    </span>
-     SIGN OUT
+    <h1>
+      Palette Picker
+    </h1>
   </NavLink>
+  <div
+    className="user-nav"
+  >
+    <NavLink
+      to="/projects"
+    >
+      <p>
+        YOUR PROJECTS
+      </p>
+    </NavLink>
+    <NavLink
+      to="/newpalette"
+    >
+      <p>
+        NEW PALETTE
+      </p>
+    </NavLink>
+    <a>
+      <p>
+        SIGN OUT
+      </p>
+    </a>
+  </div>
 </header>
 `;
 
@@ -22,13 +42,22 @@ exports[`Header should match snapshot for no username 1`] = `
 <header
   className="header"
 >
-  <h1>
-    Palette Picker
-  </h1>
   <NavLink
-    to="/home/login"
+    className="main-header"
+    to="/newpalette"
   >
-    LOGIN
+    <h1>
+      Palette Picker
+    </h1>
+  </NavLink>
+  <NavLink
+    to="/login"
+  >
+    <p
+      className="login-navlink"
+    >
+      LOGIN
+    </p>
   </NavLink>
 </header>
 `;

@@ -4,17 +4,24 @@ exports[`ProjectCard should match snapshot if there are no palettes 1`] = `
 <article
   className="ProjectCard"
 >
-  <h3>
-    Project Name
-  </h3>
+  <div
+    className="card-header"
+  >
+    <h3 />
+    <i
+      className="fas fa-trash-alt"
+      onClick={[Function]}
+    />
+  </div>
   <hr />
   <div
     className="previews-container"
   >
-    <PalettePreview />
-    <PalettePreview />
-    <PalettePreview />
-    <PalettePreview />
+    <h4
+      className="empty-project-header"
+    >
+      This project has no saved palettes!
+    </h4>
   </div>
 </article>
 `;
@@ -23,29 +30,33 @@ exports[`ProjectCard should match snapshot if there are palettes 1`] = `
 <article
   className="ProjectCard"
 >
-  <h3>
-    Project Name
-  </h3>
+  <div
+    className="card-header"
+  >
+    <h3 />
+    <i
+      className="fas fa-trash-alt"
+      onClick={[Function]}
+    />
+  </div>
   <hr />
-  <PalettePreview
-    colors={
-      Array [
-        "#FDC58D",
-        "#FFFFAA",
-        "#95E38A",
-        "#779DF2",
-        "#D2BEFD",
-      ]
-    }
-    key="11"
-  />
   <div
     className="previews-container"
   >
-    <PalettePreview />
-    <PalettePreview />
-    <PalettePreview />
-    <PalettePreview />
+    <PalettePreview
+      colors={
+        Array [
+          "#FDC58D",
+          "#FFFFAA",
+          "#95E38A",
+          "#779DF2",
+          "#D2BEFD",
+        ]
+      }
+      key="11"
+      name="Palette 1"
+      paletteId={11}
+    />
   </div>
 </article>
 `;

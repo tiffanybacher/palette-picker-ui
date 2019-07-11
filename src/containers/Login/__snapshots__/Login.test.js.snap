@@ -2,48 +2,58 @@
 
 exports[`Login should match snapshot 1`] = `
 <Redirect
-  to="/home"
+  to="/"
 />
 `;
 
 exports[`Login should match snapshot on conditional rendering 1`] = `
-<form
-  className="login-form"
-  onSubmit={[Function]}
+<div
+  className="Login"
 >
-  <h3>
-    Login
-  </h3>
-  <label
-    htmlFor="username"
+  <form
+    className="login-form"
+    onSubmit={[Function]}
   >
-    USERNAME:
-  </label>
-  <input
-    name="username"
-    onChange={[Function]}
-  />
-  <label
-    htmlFor="password"
-  >
-    PASSWORD:
-  </label>
-  <input
-    name="password"
-    onChange={[Function]}
-  />
-  <button
-    type="submit"
-  >
-     Login 
-  </button>
-  <p>
-    Not a member? 
-    <Link
-      to="/register"
+    <h3>
+      Login
+    </h3>
+    <label
+      htmlFor="username"
     >
-      Create an account?
-    </Link>
-  </p>
-</form>
+      USERNAME:
+    </label>
+    <input
+      name="username"
+      onChange={[Function]}
+      type="text"
+    />
+    <label
+      htmlFor="password"
+    >
+      PASSWORD:
+    </label>
+    <input
+      name="password"
+      onChange={[Function]}
+      type="password"
+    />
+    <button
+      className="login-btn"
+      type="submit"
+    >
+      SUBMIT
+    </button>
+    <p
+      className="signup-msg"
+    >
+      Not a member?
+      <Link
+        className="signup-link"
+        to="/register"
+      >
+         Create an account.
+      </Link>
+    </p>
+  </form>
+</div>
 `;
