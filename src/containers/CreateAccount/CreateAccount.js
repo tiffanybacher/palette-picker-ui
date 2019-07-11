@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { postUser } from '../../thunks/postUser';
+import { Redirect } from 'react-router-dom';
 
 export class CreateAccount extends Component {
   state = {
     username: '',
     password1: '',
     password2: '',
-    error: ''
+    error: '',
+    redirect: false
   }
 
   handleChange = (e) => {
@@ -34,12 +36,15 @@ export class CreateAccount extends Component {
       };
 
       this.props.postUser(user);
-
-      // redirect to ProjectsContainer
+      this.setState({ redirect: true })
     }
   }
 
   render() {
+    if(this.state.redirect) {
+      return <Redirect to='home' />
+    };
+
     return (
       <section className="CreateAccount">
         <form 
