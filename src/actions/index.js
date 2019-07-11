@@ -29,6 +29,6 @@ export const addProject = (project) => ({
 });
 
 export const addPalette = (palette) => ({
-  type: 'ADD_PAlETTE',
+  type: 'ADD_PALETTE',
   palette
 });

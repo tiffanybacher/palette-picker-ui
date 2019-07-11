@@ -9,7 +9,7 @@ class SavePalette extends Component {
     this.state = {
       paletteName: '',
       isNewProject: true,
-      projectName: ''
+      selectedProjectId: 0
     };
   };
 
@@ -17,12 +17,12 @@ class SavePalette extends Component {
     this.setState({ [e.target.name]:e.target.value });
   };
 
-  createProject = (e) => {
+  createProject = () => {
     this.setState({ isNewProject: true });
   };
 
-  addToProject = (e) => {
-    this.setState({ isNewProject: false })
+  addToProject = () => {
+    this.setState({ isNewProject: false });
   };
 
   createInit = (body) => ({
@@ -47,17 +47,17 @@ class SavePalette extends Component {
     };
   };
 
-  postPalette = async (e, project_id) => {
+  postPalette = async (project_id) => {
     try {
       const init = this.createInit({ 
         project_id: project_id, 
-        name: e.target[0].value, 
+        name: this.state.paletteName, 
         colors_array:this.props.colors 
       });
       const response = await fetch('http://localhost:3001/api/v1/palettes', init);
       const result = await response.json();
       const id = result.id
-      const paletteToAdd = { project_id, id, name: this.state.paletteName, colors_array: this.props.colors };
+      const paletteToAdd = { project_id: project_id, id, name: this.state.paletteName, colors_array: this.props.colors };
       this.props.addPalette(paletteToAdd);
     } catch (error) {
       console.log(error);
@@ -69,15 +69,20 @@ class SavePalette extends Component {
     e.persist();
     if(this.state.isNewProject) {
       const project_id = await this.postProject(e);
-      this.postPalette(e, project_id);
+      this.postPalette(project_id);
     } else {
-
+      this.postPalette(this.state.selectedProjectId);
     };
   };
 
+  selectChange = (e) => {
+    e.persist();
+    this.setState({ selectedProjectId: e.target.value });
+  }
+
   render() {
     const options = this.props.projects.map(project => {
-      return <option value={project.name}> {project.name} </option>
+      return <option value={project.id}> {project.name} </option>
     });
 
     return (
@@ -91,7 +96,10 @@ class SavePalette extends Component {
           && 
           <input name="projectName" placeholder="Project Name" onChange={this.handleChange}/>
         }
-        {!this.state.isNewProject && <select> {options} </select>}
+        {
+          !this.state.isNewProject 
+          && 
+          <select onChange={this.selectChange}> <option>Please select a project</option> {options} </select>}
         <button type="submit">SAVE</button>
       </form>
     );
