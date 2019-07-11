@@ -4,6 +4,7 @@ import { setColors, toggleLocked } from '../../actions';
 import Color from '../../components/Color/Color.js';
 import { Link } from 'react-router-dom';
 
+
 class ColorsContainer extends Component {
   componentDidMount() {
     if(!this.props.colors[0].hexCode) {
@@ -30,8 +31,8 @@ class ColorsContainer extends Component {
   };
 
   render() {
-    const colors = this.props.colors.map(color => (
-      <Color {...color} toggleLocked={this.props.toggleLocked} />
+    const colors = this.props.colors.map((color) => (
+      <Color {...color} toggleLocked={this.props.toggleLocked} key={color.hexCode} />
     ));
 
     return (

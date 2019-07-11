@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should match snapshot 1`] = `
+<Redirect
+  to="/home"
+/>
+`;
+
+exports[`Login should match snapshot on conditional rendering 1`] = `
+<form
+  className="login-form"
+  onSubmit={[Function]}
+>
+  <h3>
+    Login
+  </h3>
+  <label
+    htmlFor="username"
+  >
+    USERNAME:
+  </label>
+  <input
+    name="username"
+    onChange={[Function]}
+  />
+  <label
+    htmlFor="password"
+  >
+    PASSWORD:
+  </label>
+  <input
+    name="password"
+    onChange={[Function]}
+  />
+  <button
+    type="submit"
+  >
+     Login 
+  </button>
+  <p>
+    Not a member? 
+    <Link
+      to="/register"
+    >
+      Create an account?
+    </Link>
+  </p>
+</form>
+`;

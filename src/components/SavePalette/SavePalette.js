@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addProject, addPalette } from '../../actions';
 
-class SavePalette extends Component {
+
+export class SavePalette extends Component {
   constructor() {
     super();
     this.state = {

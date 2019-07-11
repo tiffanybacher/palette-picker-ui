@@ -12,7 +12,8 @@ exports[`PalettePreview should match snapshot 1`] = `
   >
     <div
       className="preview"
-      key="1562798559137"
+      key="0"
+
       style={
         Object {
           "background": "#FDC58D",
@@ -21,7 +22,7 @@ exports[`PalettePreview should match snapshot 1`] = `
     />
     <div
       className="preview"
-      key="1562798559137"
+      key="1"
       style={
         Object {
           "background": "#FFFFAA",
@@ -30,7 +31,7 @@ exports[`PalettePreview should match snapshot 1`] = `
     />
     <div
       className="preview"
-      key="1562798559137"
+      key="2"
       style={
         Object {
           "background": "#95E38A",
@@ -39,7 +40,7 @@ exports[`PalettePreview should match snapshot 1`] = `
     />
     <div
       className="preview"
-      key="1562798559137"
+      key="3"
       style={
         Object {
           "background": "#779DF2",
@@ -48,7 +49,7 @@ exports[`PalettePreview should match snapshot 1`] = `
     />
     <div
       className="preview"
-      key="1562798559137"
+      key="4"
       style={
         Object {
           "background": "#D2BEFD",

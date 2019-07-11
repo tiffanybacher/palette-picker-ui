@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Color should match conditional rendering 1`] = `
+<section
+  className="palette"
+>
+  <div
+    className="color"
+    style={
+      Object {
+        "background": undefined,
+      }
+    }
+  />
+  <p
+    id="locked"
+    onClick={[Function]}
+  >
+     LOCKED 
+  </p>
+  <p>
+     
+     
+  </p>
+</section>
+`;
+
+exports[`Color should match snapshot 1`] = `
+<section
+  className="palette"
+>
+  <div
+    className="color"
+    style={
+      Object {
+        "background": undefined,
+      }
+    }
+  />
+  <p
+    onClick={[Function]}
+  >
+     UNLOCKED 
+  </p>
+  <p>
+     
+     
+  </p>
+</section>
+`;

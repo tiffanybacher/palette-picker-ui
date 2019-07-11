@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { setUser, setProjects, setPalettes } from '../../actions';
 import { Redirect, Link } from 'react-router-dom';
 
-class Login extends Component {
+export class Login extends Component {
   constructor() {
     super();
     this.state = {

@@ -30,7 +30,15 @@ exports[`App should match snapshot 1`] = `
     path="/home/login"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(SavePalette)",
+        "type": [Function],
+      }
+    }
     path="/home/save"
   />
   <Route
