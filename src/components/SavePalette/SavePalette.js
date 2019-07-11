@@ -57,7 +57,7 @@ class SavePalette extends Component {
       const response = await fetch('http://localhost:3001/api/v1/palettes', init);
       const result = await response.json();
       const id = result.id
-      const paletteToAdd = { project_id, id, name: this.state.paletteName, colors_array: this.props.colors };
+      const paletteToAdd = { project_id: project_id, id, name: this.state.paletteName, colors_array: this.props.colors };
       this.props.addPalette(paletteToAdd);
     } catch (error) {
       console.log(error);
