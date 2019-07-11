@@ -5,8 +5,6 @@ function ProjectCard(props) {
   let palettesDisplay;
   const { palettes } = props;
 
-  console.log(palettes)
-
   if (palettes.length) {
     palettesDisplay = palettes.map(palette => 
       <PalettePreview 

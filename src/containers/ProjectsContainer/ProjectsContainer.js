@@ -3,23 +3,23 @@ import { connect } from 'react-redux';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 export class ProjectsContainer extends Component {
-  findPalettes = (projectId) => {
-    return this.props.palettes.filter(palette =>
-      palette.project_id === projectId
-    );
-  }
-
   displayProjects = () => {
     let projectsDisplay;
 
     if (this.props.projects.length) {
-      projectsDisplay = this.props.projects.map(project => 
-        <ProjectCard 
-          palettes={this.findPalettes()}
+      projectsDisplay = this.props.projects.map(project => {
+        const palettes = this.props.palettes.filter(palette => {
+          return palette.project_id == project.id;
+        });
+
+        return (
+          <ProjectCard 
+          palettes={palettes}
           project={project} 
           key={project.id}
         />
-      );
+        );
+      });
     } else {
       projectsDisplay = 
         <article className="empty-projects-card">
