@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addProject } from '../../actions';
+
 
 class SavePalette extends Component {
   constructor() {
@@ -31,13 +33,26 @@ class SavePalette extends Component {
     body: JSON.stringify(body)
   });
 
-  handleSubmit = (e) => {
+  postProject = async (e) => {
+    try {
+      const init = this.createInit({ user_id: this.props.user.id, name: e.target[1].value });
+      const response = await fetch('http://localhost:3001/api/v1/projects', init);
+      const result = await response.json();
+      const id = result.id
+      const projectToAdd = { id, user_id: this.props.user.id, name: e.target[1].value };
+      this.props.addProject(projectToAdd);
+    } catch(error) {
+      console.log(error)
+    }
+  }
+
+
+  handleSubmit = async (e) => {
     e.preventDefault();
     e.persist();
-    // const 
-    // if(this.state.isNewProject) {
-    //   fetch('http://localhost:3001/api/v1/')
-    // };
+    if(this.state.isNewProject) {
+      this.postProject(e);
+    }
   };
 
   render() {
@@ -68,4 +83,8 @@ export const mapStateToProps = (state) => ({
   projects: state.projects
 });
 
-export default connect(mapStateToProps)(SavePalette);
+export const mapDispatchToProps = (dispatch) => ({
+  addProject: (project) => dispatch(addProject(project))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SavePalette);
