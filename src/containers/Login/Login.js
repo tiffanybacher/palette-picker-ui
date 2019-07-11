@@ -73,18 +73,21 @@ class Login extends Component {
       return <Redirect to='/home' />
     }
     return (
-      <form onSubmit={this.getUser} className="login-form">
-        <h3>Login</h3>
-        <label htmlFor="username">USERNAME:</label>
-        <input type="text" onChange={this.handleChange} name="username" />
-        <label htmlFor="password">PASSWORD:</label>
-        <input type="password" onChange={this.handleChange} name="password"/> 
-        <button type="submit"> Login </button>
-        {this.state.error && <p>{this.state.error}</p>}
-        <p>
-          Not a member? <Link to="/register">Create an account?</Link>
-        </p>
-      </form>
+      <div className="Login">
+        <form onSubmit={this.getUser} className="login-form">
+          <h3>Login</h3>
+          <label htmlFor="username">USERNAME:</label>
+          <input type="text" onChange={this.handleChange} name="username" />
+          <label htmlFor="password">PASSWORD:</label>
+          <input type="password" onChange={this.handleChange} name="password"/> 
+          <button type="submit" className="login-btn">SUBMIT</button>
+          {this.state.error && <p>{this.state.error}</p>}
+          <p className="signup-msg">
+            Not a member?
+            <Link to="/register" className="signup-link"> Create an account.</Link>
+          </p>
+        </form>
+      </div>
     );
   };
 };

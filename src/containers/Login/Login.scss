@@ -1,6 +1,50 @@
+.Login {
+  background: rgba(black, .4);
+  height: 100%;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  z-index: 500;
+}
+
 .login-form {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 50%;
-};
+  width: 500px;
+}
+
+h3 {
+  font-size: 2em;
+  text-align: center;
+}
+
+input,
+button {
+  font-size: 1.5em;
+  margin: 0 0 15px 0;
+  padding: 15px;
+}
+
+button {
+  background: $gray;
+  color: white;
+  font-weight: 800;
+
+  &:hover {
+    background: $lightGray;
+  }
+}
+
+.login-btn {
+  margin: 20px 0 0 0;
+}
+
+.signup-msg {
+  margin: 5px 0 15px;
+}
+
+.signup-link {
+  font-style: italic;
+  margin: 0;
+}

@@ -2,8 +2,31 @@
   display: flex;
   justify-content: space-between;
   padding: 20px;
-};
+}
 
-.login-navlink {
-  margin: 10px;
+.main-header {
+  margin: 0;
+  text-decoration: none;
+}
+
+.user-nav {
+  display: flex;
+}
+
+a {
+  color: black;
+  margin: 15px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.active.main-header {
+  text-decoration: none;
 }
