@@ -10,7 +10,7 @@ function Header(props) {
         !props.user.username 
         && 
         <NavLink to='/home/login'>
-          <p>LOGIN</p>
+          <p className="login-navlink">LOGIN</p>
         </NavLink>
       }
       {
