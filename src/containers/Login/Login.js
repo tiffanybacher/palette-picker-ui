@@ -69,9 +69,10 @@ class Login extends Component {
   };
 
   render() {
-    if(this.props.user.username) {
+    if (this.props.user.username) {
       return <Redirect to='/home' />
     }
+    
     return (
       <div className="Login">
         <form onSubmit={this.getUser} className="login-form">

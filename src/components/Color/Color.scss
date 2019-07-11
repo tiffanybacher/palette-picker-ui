@@ -14,6 +14,7 @@
 .fa-unlock {
   color: $gray;
   cursor: pointer;
+  margin: 10px 0;
 
   &:hover {
     color: black;
@@ -25,7 +26,7 @@
 }
 
 .hex-code {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 600;
   text-transform: uppercase;
 }

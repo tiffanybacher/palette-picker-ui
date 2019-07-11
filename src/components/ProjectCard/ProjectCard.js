@@ -27,13 +27,15 @@ export class ProjectCard extends Component {
 
     return (
       <article className="ProjectCard">
-        <h3>
-          {this.props.project.name}
-        </h3>
-        <i 
-          onClick={() => this.props.deleteProject(this.props.project.id)}
-          className="fas fa-times">
-        </i>
+        <div className="card-header">
+          <h3>
+            {this.props.project.name}
+          </h3>
+          <i 
+            onClick={() => this.props.deleteProject(this.props.project.id)}
+            className="fas fa-trash-alt">
+          </i>
+        </div>
         <hr />
         <div className="previews-container">
          {palettesDisplay}

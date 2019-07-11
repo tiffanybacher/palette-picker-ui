@@ -101,7 +101,7 @@ class SavePalette extends Component {
             !this.state.isNewProject 
             && 
             <select onChange={this.selectChange}><option>Please select a project</option>{options}</select>}
-          <button type="submit" className="save-btn"><Link to="/projects" className="save-link">SAVE</Link></button>
+          <button type="submit" className="save-btn">SUBMIT</button>
         </form>
       </div>
     );

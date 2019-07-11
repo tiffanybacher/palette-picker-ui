@@ -25,9 +25,9 @@ function Header(props) {
           <NavLink to='/home'>
             <p>NEW PALETTE</p>
           </NavLink>
-          <NavLink to='/signout'>
+          <a>
             <p>SIGN OUT</p>
-          </NavLink>
+          </a>
         </div>
       }
     </header>
