@@ -13,6 +13,7 @@ exports[`PalettePreview should match snapshot 1`] = `
     <div
       className="preview"
       key="0"
+
       style={
         Object {
           "background": "#FDC58D",

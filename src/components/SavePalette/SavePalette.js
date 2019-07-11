@@ -77,31 +77,33 @@ export class SavePalette extends Component {
 
   selectChange = (e) => {
     e.persist();
-    this.setState({ selectedProjectId: e.target.value });
+    this.setState({ selectedProjectId: parseInt(e.target.value) });
   }
 
   render() {
     const options = this.props.projects.map(project => {
-      return <option value={project.id}> {project.name} </option>
+      return <option value={project.id}>{project.name}</option>
     });
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="name"> PALETTE NAME:</label>
-        <input name="paletteName" onChange={this.handleChange}/>
-        <p onClick={this.addToProject}>Add to existing project</p>
-        <p onClick={this.createProject}>Create new project</p>
-        {
-          this.state.isNewProject 
-          && 
-          <input name="projectName" placeholder="Project Name" onChange={this.handleChange}/>
-        }
-        {
-          !this.state.isNewProject 
-          && 
-          <select onChange={this.selectChange}> <option>Please select a project</option> {options} </select>}
-        <button type="submit">SAVE</button>
-      </form>
+      <div className="SavePalette">
+        <form onSubmit={this.handleSubmit} className="save-form">
+          <label htmlFor="name">PALETTE NAME:</label>
+          <input type="text" name="paletteName" onChange={this.handleChange} placeholder="Palette Name"/>
+          <p onClick={this.addToProject}>Add to existing project</p>
+          <p onClick={this.createProject}>Create new project</p>
+          {
+            this.state.isNewProject 
+            && 
+            <input type="text" name="projectName" placeholder="Project Name" onChange={this.handleChange}/>
+          }
+          {
+            !this.state.isNewProject 
+            && 
+            <select onChange={this.selectChange}><option>Please select a project</option>{options}</select>}
+          <button type="submit" className="save-btn">SUBMIT</button>
+        </form>
+      </div>
     );
   };
 };

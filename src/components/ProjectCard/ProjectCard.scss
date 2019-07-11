@@ -1,8 +1,20 @@
 .ProjectCard {
   background: white;
+  margin: 20px 0;
   padding: 50px;
 
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+
+    .fa-trash-alt {
+      font-size: 1.2em;
+    }
+  }
+
   h3 {
+    font-size: 1.1em;
+    text-align: left;
     text-transform: uppercase;
   }
 
@@ -21,5 +33,24 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+
+  .fa-trash-alt,
+  .fa-times {
+    color: rgba(black, .5);
+    font-size: 1.25em;
+    position: relative;
+    right: 7px;
+    bottom: 7px;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+.empty-projects-card {
+  h3 {
+    font-size: 1.3em;
   }
 }

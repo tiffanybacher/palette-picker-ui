@@ -42,7 +42,15 @@ exports[`App should match snapshot 1`] = `
     path="/home/save"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(ProjectsContainer)",
+        "type": [Function],
+      }
+    }
     path="/projects"
   />
   <Route

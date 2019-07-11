@@ -1,7 +1,32 @@
-.palette {
-  width: 100%
+.Color-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
+
 .color {
   width: 100%;
   height: 400px;
+}
+
+.fa-lock,
+.fa-unlock {
+  color: $gray;
+  cursor: pointer;
+  margin: 10px 0;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.fa-lock {
+  color: black;
+}
+
+.hex-code {
+  font-size: 1.1em;
+  font-weight: 600;
+  text-transform: uppercase;
 }

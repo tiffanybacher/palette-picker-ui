@@ -22,7 +22,7 @@ export const postUser = (user) => {
 
       dispatch(setUser(userInfo));
     } catch (error) {
-      console.log(error);
+      console.log({ error });
     }
   }
 }

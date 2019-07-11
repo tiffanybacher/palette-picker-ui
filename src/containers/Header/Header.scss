@@ -1,3 +1,43 @@
 .header {
-  
-};
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.main-header {
+  margin: 0;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  h1 {
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+}
+
+.user-nav {
+  display: flex;
+}
+
+a {
+  color: black;
+  font-size: 1.2em;
+  font-weight: 800;
+  margin: 15px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.active.main-header {
+  text-decoration: none;
+}

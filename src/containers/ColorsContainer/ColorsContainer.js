@@ -4,11 +4,8 @@ import { setColors, toggleLocked } from '../../actions';
 import Color from '../../components/Color/Color.js';
 import { Link } from 'react-router-dom';
 
-export class ColorsContainer extends Component {
-  constructor() {
-    super();
-  };
-  
+
+class ColorsContainer extends Component {
   componentDidMount() {
     if(!this.props.colors[0].hexCode) {
       this.generateColors();
@@ -39,13 +36,13 @@ export class ColorsContainer extends Component {
     ));
 
     return (
-      <div>
+      <div className="ColorsContainer">
         <div className="colors">
           {colors}
         </div>
         <div className="button-container">
           <button onClick={this.generateColors}>GENERATE</button>
-          {this.props.user.username && <Link to='/home/save'> <button>SAVE</button> </Link>}
+          {this.props.user.username && <Link to='/home/save' className="button"><button>SAVE</button></Link>}
         </div>
       </div>
     );

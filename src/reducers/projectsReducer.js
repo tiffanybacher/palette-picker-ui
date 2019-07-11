@@ -4,6 +4,8 @@ const projectsReducer = (state = [], action) => {
       return [...state, action.project]
     case 'SET_PROJECTS':
       return action.projects
+    case 'DELETE_PROJECT':
+      return state.filter(project => project.id !== action.projectId)
     default:
       return state
   };
