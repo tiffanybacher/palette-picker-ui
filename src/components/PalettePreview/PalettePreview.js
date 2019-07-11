@@ -12,7 +12,7 @@ const colors = props.colors;
 
   return (
     <article className="PalettePreview">
-      <h4>Palette Name</h4>
+      <h4>Palette Name: {props.name}</h4>
       <div className="flex-container">
         {colorPreviews}
         <i 

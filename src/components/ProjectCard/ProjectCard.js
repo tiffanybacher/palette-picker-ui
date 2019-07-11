@@ -12,6 +12,7 @@ export class ProjectCard extends Component {
     if (palettes.length) {
       palettesDisplay = palettes.map(palette => 
         <PalettePreview 
+          name={palette.name}
           deletePalette={this.props.deletePalette}
           colors={palette.colors_array} 
           paletteId={palette.id}
