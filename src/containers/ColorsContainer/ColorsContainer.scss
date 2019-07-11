@@ -1,3 +1,36 @@
+.ColorsContainer {
+  .button-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 0 0;
+  }
+
+  button {
+    background: $gray;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 800;
+    margin: 15px;
+    padding: 15px;
+    width: 500px;
+
+    &:hover {
+      background: $lightGray;
+    }
+  }
+
+  button,
+  .button {
+   
+  }
+
+  .button {
+
+  }
+}
+
 .colors {
   display: flex;
   width: 100%;  

@@ -35,13 +35,13 @@ class ColorsContainer extends Component {
     ));
 
     return (
-      <div>
+      <div className="ColorsContainer">
         <div className="colors">
           {colors}
         </div>
         <div className="button-container">
           <button onClick={this.generateColors}>GENERATE</button>
-          {this.props.user.username && <Link to='/home/save'> <button>SAVE</button> </Link>}
+          {this.props.user.username && <Link to='/home/save' className="button"><button>SAVE</button></Link>}
         </div>
       </div>
     );
