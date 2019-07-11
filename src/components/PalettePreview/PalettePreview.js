@@ -1,7 +1,7 @@
 import React from 'react';
 
 function PalettePreview(props) {
-rs = props.colors;
+const colors = props.colors;
   const colorPreviews = colors.map(color => 
     <div 
       className="preview"
