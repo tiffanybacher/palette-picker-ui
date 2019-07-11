@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addProject, addPalette } from '../../actions';
-import { Link } from 'react-router-dom';
 
 class SavePalette extends Component {
   constructor() {
