@@ -13,6 +13,7 @@
 .fa-lock,
 .fa-unlock {
   color: $gray;
+  cursor: pointer;
 
   &:hover {
     color: black;
