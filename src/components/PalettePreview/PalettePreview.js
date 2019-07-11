@@ -16,7 +16,7 @@ function PalettePreview(props) {
       <div className="flex-container">
         {colorPreviews}
         <i 
-          onClick={props.handleDeletePalette}
+          onClick={() => props.handleDeletePalette(props.paletteId)}
           class="fas fa-times">
         </i>
       </div>

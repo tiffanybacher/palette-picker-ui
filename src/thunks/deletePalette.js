@@ -1,7 +1,17 @@
-import {}
+import * as actions from '../actions';
 
-const deletePalette = (paletteId) => {
+export const deletePalette = (paletteId) => {
   return async (dispatch) => {
+    const url = `${process.env.REACT_APP_BACKEND_URL}/api/v1/palettes/${paletteId}`;
 
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error('Failed to delete palette');
+    }
+
+    dispatch(actions.deletePalette(paletteId));
+  } catch (error) {
+    console.log({ error })
   }
 }

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { deletePalette } from '../../actions';
 import PalettePreview from '../PalettePreview/PalettePreview';
 
 export class ProjectCard extends Component {
-  handleDeletePalette = () => {
-    console.log('delete')
+  handleDeletePalette = (paletteId) => {
+    this.props.deletePalette(paletteId)
   }
 
   render() {
@@ -16,6 +17,7 @@ export class ProjectCard extends Component {
         <PalettePreview 
           handleDeletePalette={this.handleDeletePalette}
           colors={palette.colors_array} 
+          paletteId={palette.id}
           key={palette.id} 
         />
       );
@@ -41,7 +43,7 @@ export class ProjectCard extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  deletePalette: dispatch((paletteId) => console.log(paletteId))
+  deletePalette: (paletteId) => dispatch(deletePalette(paletteId))
 })
 
 export default connect(undefined, mapDispatchToProps)(ProjectCard);
