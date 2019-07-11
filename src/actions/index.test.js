@@ -36,4 +36,52 @@ describe('actions', () => {
       expect(expectedAction.user).toEqual({});
     });
   });
+
+  describe('setProjects', () => {
+    it('should have a type of setProjects', () => {
+      const expectedAction = actions.setProjects();
+      expect(expectedAction.type).toEqual('SET_PROJECTS');
+    });
+
+    it('should have a property of projects with a value matching arguement passed in', () => {
+      const expectedAction = actions.setProjects([]);
+      expect(expectedAction.projects).toEqual([]);
+    });
+  });
+
+  describe('setPalettes', () => {
+    it('should have a type of SET_PALETTES', () => {
+      const expectedAction = actions.setPalettes();
+      expect(expectedAction.type).toEqual('SET_PALETTES');
+    });
+
+    it('should have a property of palettes with a value matching arguement passed in', () => {
+      const expectedAction = actions.setPalettes([]);
+      expect(expectedAction.palettes).toEqual([]);
+    });
+  });
+
+  describe('addProject', () => {
+    it('should have a type of ADD_PROJECT', () => {
+      const expectedAction = actions.addProject({});
+      expect(expectedAction.type).toEqual('ADD_PROJECT');
+    });
+
+    it('should have a property project that equals the argument passed', () => {
+      const expectedAction = actions.addProject({});
+      expect(expectedAction.project).toEqual({});
+    });
+  });
+
+  describe('addPalette', () => {
+    it('should have a type of ADD_PALETTE', () => {
+      const expectedAction = actions.addPalette({});
+      expect(expectedAction.type).toEqual('ADD_PALETTE');
+    });
+
+    it('should have a property palette that equals the argument passed', () => {
+      const expectedAction = actions.addPalette({});
+      expect(expectedAction.palette).toEqual({});
+    });
+  });
 });
