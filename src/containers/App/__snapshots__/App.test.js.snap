@@ -15,8 +15,10 @@ exports[`App should match snapshot 1`] = `
         "type": [Function],
       }
     }
-    path="/home"
+    exact={true}
+    path="/"
   />
+  //
   <Route
     component={
       Object {
@@ -27,7 +29,8 @@ exports[`App should match snapshot 1`] = `
         "type": [Function],
       }
     }
-    path="/home/login"
+    exact={true}
+    path="/login"
   />
   <Route
     component={
@@ -39,7 +42,8 @@ exports[`App should match snapshot 1`] = `
         "type": [Function],
       }
     }
-    path="/home/save"
+    exact={true}
+    path="/save"
   />
   <Route
     component={
@@ -51,6 +55,7 @@ exports[`App should match snapshot 1`] = `
         "type": [Function],
       }
     }
+    exact={true}
     path="/projects"
   />
   <Route
@@ -63,9 +68,11 @@ exports[`App should match snapshot 1`] = `
         "type": [Function],
       }
     }
+    exact={true}
     path="/register"
   />
   <Route
+    exact={true}
     path="/signout"
   />
 </div>

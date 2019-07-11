@@ -7,46 +7,14 @@ exports[`ProjectsContainer should match snapshot if there are no saved projects 
   <h2>
     Your Projects
   </h2>
-  <ProjectCard />
-  <button
-    className="add-project-btn"
+  <article
+    className="empty-projects-card"
   >
-    <i
-      className="fas fa-plus"
-    />
-    <p>
-      Create New Project
-    </p>
-  </button>
+    <h3>
+      There are no saved projects!
+    </h3>
+  </article>
 </section>
 `;
 
-exports[`ProjectsContainer should match snapshot if there are saved projects 1`] = `
-<section
-  className="ProjectsContainer"
->
-  <h2>
-    Your Projects
-  </h2>
-  <ProjectCard
-    key="1"
-    project={
-      Object {
-        "id": 1,
-        "name": "Project 1",
-      }
-    }
-  />
-  <ProjectCard />
-  <button
-    className="add-project-btn"
-  >
-    <i
-      className="fas fa-plus"
-    />
-    <p>
-      Create New Project
-    </p>
-  </button>
-</section>
-`;
+exports[`ProjectsContainer should match snapshot if there are saved projects 1`] = `undefined`;

@@ -1,37 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SavePalette should match snapshot 1`] = `
-<form
-  onSubmit={[Function]}
+<div
+  className="SavePalette"
 >
-  <label
-    htmlFor="name"
+  <form
+    className="save-form"
+    onSubmit={[Function]}
   >
-     PALETTE NAME:
-  </label>
-  <input
-    name="paletteName"
-    onChange={[Function]}
-  />
-  <p
-    onClick={[Function]}
-  >
-    Add to existing project
-  </p>
-  <p
-    onClick={[Function]}
-  >
-    Create new project
-  </p>
-  <input
-    name="projectName"
-    onChange={[Function]}
-    placeholder="Project Name"
-  />
-  <button
-    type="submit"
-  >
-    SAVE
-  </button>
-</form>
+    <label
+      htmlFor="name"
+    >
+      PALETTE NAME:
+    </label>
+    <input
+      name="paletteName"
+      onChange={[Function]}
+      placeholder="Palette Name"
+      type="text"
+    />
+    <p
+      onClick={[Function]}
+    >
+      Add to existing project
+    </p>
+    <p
+      onClick={[Function]}
+    >
+      Create new project
+    </p>
+    <input
+      name="projectName"
+      onChange={[Function]}
+      placeholder="Project Name"
+      type="text"
+    />
+    <button
+      className="save-btn"
+      type="submit"
+    >
+      SUBMIT
+    </button>
+  </form>
+</div>
 `;
