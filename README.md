@@ -26,11 +26,10 @@ Once everything is installed in both folders, in the back-end folder, run `npm s
 
 ## Screenshots
 
+<img width="1440" alt="Screen Shot 2019-07-11 at 7 12 13 AM" src="https://user-images.githubusercontent.com/46074328/61076441-7ce31b80-a3d9-11e9-9df0-f044853fe96f.png">
 <img width="1440" alt="Screen Shot 2019-07-11 at 7 12 40 AM" src="https://user-images.githubusercontent.com/46074328/61076393-5c1ac600-a3d9-11e9-89f7-9993b6774a21.png">
 <img width="1440" alt="Screen Shot 2019-07-11 at 7 13 54 AM" src="https://user-images.githubusercontent.com/46074328/61076394-5c1ac600-a3d9-11e9-8b49-352ae5389839.png">
 <img width="1440" alt="Screen Shot 2019-07-11 at 7 17 02 AM" src="https://user-images.githubusercontent.com/46074328/61076395-5c1ac600-a3d9-11e9-86c3-dd98b03f3ae1.png">
-<img width="1440" alt="Screen Shot 2019-07-11 at 7 12 13 AM" src="https://user-images.githubusercontent.com/46074328/61076441-7ce31b80-a3d9-11e9-9df0-f044853fe96f.png">
-
 
 
 ## Emphasis of the Project
