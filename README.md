@@ -2,6 +2,8 @@
 
 Palette Picker is a app to help people interested in design to find inspiration from randomly generated color palettes.
 
+#### [Deployed App](https://palette-picker-tbbd.herokuapp.com)
+
 ## Setup
 
 Simply start by cloning the front-end repo:
