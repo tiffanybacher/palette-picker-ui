@@ -42,7 +42,7 @@ class ColorsContainer extends Component {
         </div>
         <div className="button-container">
           <button onClick={this.generateColors}>GENERATE</button>
-          {this.props.user.username && <Link to='/home/save' className="button"><button>SAVE</button></Link>}
+          {this.props.user.username && <Link to='/save' className="button"><button>SAVE</button></Link>}
         </div>
       </div>
     );
