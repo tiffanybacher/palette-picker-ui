@@ -16,7 +16,7 @@ export const deletePalette = (paletteId) => {
 
       dispatch(actions.deletePalette(paletteId));
     } catch (error) {
-      console.log({ error })
+      console.log({ error });
     }
   }
 }
