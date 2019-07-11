@@ -23,7 +23,7 @@ export class ProjectsContainer extends Component {
     } else {
       projectsDisplay = 
         <article className="empty-projects-card">
-          <h3>There are no saved projects!</h3>
+          <h3 >There are no saved projects!</h3>
         </article>
     }
 

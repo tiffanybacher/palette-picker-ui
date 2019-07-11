@@ -5,25 +5,29 @@ import { NavLink } from 'react-router-dom';
 function Header(props) {
   return (
     <header className="header">
-      <h1>Palette Picker</h1>
+      <NavLink to='/home' className="main-header">
+        <h1>Palette Picker</h1>
+      </NavLink>
       {
         !props.user.username 
         && 
         <NavLink to='/home/login'>
-          <p>LOGIN</p>
+          <p className="login-navlink">LOGIN</p>
         </NavLink>
       }
       {
         props.user.username 
         && 
         <div className="user-nav">
-          <p>Welcome, {props.user.username}!</p>
-          <NavLink to='/home/'>
-            <p>SIGN OUT</p>
-          </NavLink>
           <NavLink to='/projects'>
             <p>YOUR PROJECTS</p>
           </NavLink>
+          <NavLink to='/home'>
+            <p>NEW PALETTE</p>
+          </NavLink>
+          <a>
+            <p>SIGN OUT</p>
+          </a>
         </div>
       }
     </header>
