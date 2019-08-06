@@ -4,24 +4,25 @@ Palette Picker is a app to help people interested in design to find inspiration 
 
 #### [Deployed App](https://palette-picker-tbbd.herokuapp.com)
 
-## Setup
+Follow the setup directions for the back end repository [here.](https://github.com/tiffanybacher/palette-picker-api)
 
-Simply start by cloning the front-end repo:
+Then clone the front end repo:
 
 ```bash
 git clone https://github.com/tiffanybacher/palette-picker-ui.git
 ```
 
-In the same folder you cloned the repository also clone the back-end repository with 
+Install the library dependencies for the front end:
 
 ```bash
-git clone https://github.com/tiffanybacher/palette-picker-api.git
+cd palette-picker-ui
+npm install
 ```
 
-Once you have cloned the repo, to install the library dependencies cd into the folders just created and run:
+To start in development mode:
 
 ```bash
-npm install
+npm start
 ```
 
 Once everything is installed in both folders, in the back-end folder, run `npm start` in your terminal, you should see "Something is running on http://localhost:3001/".  Now opening a separate tab in the terminal cd into the front-end repository and run `npm start` you're default browser should open a tab to http://localhost:3000/ if not simply go to http://localhost:3000/ in your preferred browser.
