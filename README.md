@@ -2,7 +2,11 @@
 
 Palette Picker is a app to help people interested in design to find inspiration from randomly generated color palettes.
 
+## Deployed
+
 #### [Deployed App](https://palette-picker-tbbd.herokuapp.com)
+
+## Setup
 
 Follow the setup directions for the back end repository [here.](https://github.com/tiffanybacher/palette-picker-api)
 
@@ -24,8 +28,6 @@ To start in development mode:
 ```bash
 npm start
 ```
-
-Once everything is installed in both folders, in the back-end folder, run `npm start` in your terminal, you should see "Something is running on http://localhost:3001/".  Now opening a separate tab in the terminal cd into the front-end repository and run `npm start` you're default browser should open a tab to http://localhost:3000/ if not simply go to http://localhost:3000/ in your preferred browser.
 
 ## Screenshots
 
@@ -50,7 +52,7 @@ Further knowledge on the following technologies/principles:
 - Jest and Enzyme Testing
 
 
-## Contributors/Project Length
+## Contributors
 
 Created by:
 - Brennan Duffey: [GitHub](https://github.com/BrennanDuffey),
